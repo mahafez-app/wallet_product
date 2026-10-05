@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
-import '../../../localization/wallet_localization.dart';
+import '../../utils/localization_extension.dart';
 
-class AddWalletPhoneNumberSection extends StatefulWidget {
-  const AddWalletPhoneNumberSection({
+class PhoneNumberSection extends StatefulWidget {
+  const PhoneNumberSection({
     super.key,
     required this.phoneNumber,
     required this.onPhoneNumberChanged,
@@ -15,12 +15,10 @@ class AddWalletPhoneNumberSection extends StatefulWidget {
   final ValueChanged<String> onPhoneNumberChanged;
 
   @override
-  State<AddWalletPhoneNumberSection> createState() =>
-      _AddWalletPhoneNumberSectionState();
+  State<PhoneNumberSection> createState() => _PhoneNumberSectionState();
 }
 
-class _AddWalletPhoneNumberSectionState
-    extends State<AddWalletPhoneNumberSection> {
+class _PhoneNumberSectionState extends State<PhoneNumberSection> {
   late final TextEditingController _phoneController;
 
   @override
@@ -30,7 +28,7 @@ class _AddWalletPhoneNumberSectionState
   }
 
   @override
-  void didUpdateWidget(covariant AddWalletPhoneNumberSection oldWidget) {
+  void didUpdateWidget(covariant PhoneNumberSection oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (widget.phoneNumber != _phoneController.text) {
       _phoneController.value = TextEditingValue(
@@ -48,7 +46,7 @@ class _AddWalletPhoneNumberSectionState
 
   @override
   Widget build(BuildContext context) {
-    final s = context.walletL10n;
+    final s = context.l10n;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [

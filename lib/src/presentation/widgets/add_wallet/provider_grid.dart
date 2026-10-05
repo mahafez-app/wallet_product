@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:mahafez_core/mahafez_core.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
-import '../../utils/wallet_provider_ext.dart';
-import '../shared/wallet_provider_icon.dart';
+import '../../utils/provider_ext.dart';
+import '../shared/provider_icon.dart';
 
-class AddWalletProviderGrid extends StatelessWidget {
-  const AddWalletProviderGrid({
+class ProviderGrid extends StatelessWidget {
+  const ProviderGrid({
     super.key,
     required this.selectedProviders,
     required this.allowedProviders,
@@ -94,7 +94,7 @@ class _ProviderCard extends StatelessWidget {
               children: [
                 Opacity(
                   opacity: isEnabled ? 1 : 0.45,
-                  child: WalletProviderIcon(
+                  child: ProviderIcon(
                     provider: provider,
                     size: 40.responsiveRadius,
                   ),

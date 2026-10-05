@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:mahafez_core/mahafez_core.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
-import '../../../localization/wallet_localization.dart';
 import '../../utils/amount_extension.dart';
-import '../../utils/wallet_provider_ext.dart';
-import 'wallet_provider_info.dart';
+import '../../utils/localization_extension.dart';
+import '../../utils/provider_ext.dart';
+import 'provider_info.dart';
 
-class WalletCard extends StatelessWidget {
-  const WalletCard({
+class SummaryCard extends StatelessWidget {
+  const SummaryCard({
     super.key,
     required this.provider,
     required this.phoneNumber,
@@ -21,7 +21,7 @@ class WalletCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.walletL10n;
+    final l10n = context.l10n;
     final theme = Theme.of(context);
     final colors = context.mahafezColors;
 
@@ -50,7 +50,7 @@ class WalletCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            WalletProviderInfo(provider: provider, phoneNumber: phoneNumber),
+            ProviderInfo(provider: provider, phoneNumber: phoneNumber),
             MahafezSpacing.lg.verticalSpace,
             Text(
               l10n.currentBalance,
@@ -59,7 +59,7 @@ class WalletCard extends StatelessWidget {
               ),
             ),
             MahafezSpacing.xs.verticalSpace,
-            _WalletBalance(balance: balance),
+            _BalanceDisplay(balance: balance),
           ],
         ),
       ),
@@ -67,21 +67,21 @@ class WalletCard extends StatelessWidget {
   }
 }
 
-class _WalletBalance extends StatelessWidget {
-  const _WalletBalance({required this.balance});
+class _BalanceDisplay extends StatelessWidget {
+  const _BalanceDisplay({required this.balance});
 
   final double balance;
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.walletL10n;
+    final l10n = context.l10n;
     final theme = Theme.of(context);
     final primary = theme.colorScheme.primary;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Text(
-          balance.toLocalizedWalletAmount(context),
+          balance.toLocalizedAmount(context),
           style: theme.textTheme.titleLarge?.copyWith(
             color: primary,
             fontSize: 24.responsiveFont,

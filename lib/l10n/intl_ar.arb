@@ -1,0 +1,38 @@
+{
+  "@@locale": "ar",
+  "addWalletTitle": "إضافة محفظة",
+  "addWalletDescription": "اختر مقدم الخدمة ورقم الهاتف المرتبط بمحفظتك الإلكترونية",
+  "addWalletAction": "إضافة المحفظة",
+  "chooseProvider": "اختر مزود الخدمة",
+  "phoneNumber": "رقم الهاتف المحمول",
+  "walletDetails": "تفاصيل المحفظة",
+  "currentBalance": "الرصيد الحالي",
+  "currency": "ج.م",
+  "lastActivity": "آخر نشاط",
+  "totalIn": "إجمالي الوارد",
+  "totalOut": "إجمالي الصادر",
+  "walletBalanceEditAction": "تعديل الرصيد يدوياً",
+  "walletBalanceEditSuccess": "تم تعديل الرصيد بنجاح",
+  "walletResetStats": "إعادة تعيين الإحصائيات",
+  "walletResetStatsDescription": "سيتم تصفير إجمالي الوارد والصادر وتعيين نقطة بداية جديدة من الآن.",
+  "walletResetStatsAction": "إعادة تعيين",
+  "commonCancelAction": "إلغاء",
+  "walletStatusActive": "نشطة",
+  "workspaceUnknownMember": "عضو غير معروف",
+  "providerVodafone": "فودافون كاش",
+  "providerOrange": "أورنج كاش",
+  "providerEtisalat": "اتصالات كاش",
+  "providerWePay": "وي باي",
+  "providerInstapay": "انستاباي",
+  "providerUnknown": "أخرى",
+  "statsFrom": "منذ {date}",
+  "@statsFrom": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "invalidAmountError": "يرجى إدخال مبلغ صحيح",
+  "saveBalanceAction": "حفظ الرصيد"
+}

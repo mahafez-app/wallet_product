@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 
-extension WalletDateFormatting on DateTime {
-  String toFormattedWalletDate(BuildContext context) {
+extension DateFormatting on DateTime {
+  String toFormattedDate(BuildContext context) {
     return DateFormat(
       'd MMMM yyyy · H:mm',
       Localizations.localeOf(context).toLanguageTag(),

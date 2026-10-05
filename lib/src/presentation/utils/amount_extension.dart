@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 
-import '../../localization/wallet_localization.dart';
+import 'localization_extension.dart';
 
-extension WalletAmountFormatting on num {
-  String toLocalizedWalletAmount(BuildContext context, {int decimalDigits = 2}) {
+extension AmountFormatting on num {
+  String toLocalizedAmount(BuildContext context, {int decimalDigits = 2}) {
     final locale = Localizations.localeOf(context).toLanguageTag();
     return NumberFormat.decimalPatternDigits(
       locale: locale,
@@ -12,7 +12,7 @@ extension WalletAmountFormatting on num {
     ).format(this);
   }
 
-  String toWalletCurrencyText(
+  String toCurrencyText(
     BuildContext context, {
     int decimalDigits = 2,
     String? sign,
@@ -25,9 +25,9 @@ extension WalletAmountFormatting on num {
     }
 
     buffer
-      ..write(toLocalizedWalletAmount(context, decimalDigits: decimalDigits))
+      ..write(toLocalizedAmount(context, decimalDigits: decimalDigits))
       ..write(' ')
-      ..write(context.walletL10n.currency);
+      ..write(context.l10n.currency);
 
     return buffer.toString();
   }

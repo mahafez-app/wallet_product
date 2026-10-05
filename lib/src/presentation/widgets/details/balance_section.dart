@@ -3,15 +3,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
 import '../../../domain/entities/wallet_details_entity.dart';
-import '../../../localization/wallet_localization.dart';
 import '../../providers/wallet_details_controller.dart';
 import '../../providers/wallet_providers.dart';
 import '../../utils/date_extensions.dart';
-import 'edit_wallet_balance_bottom_sheet.dart';
-import 'wallet_balance_card.dart';
+import '../../utils/localization_extension.dart';
+import 'balance_card.dart';
+import 'edit_balance_bottom_sheet.dart';
 
-class WalletBalanceSection extends ConsumerWidget {
-  const WalletBalanceSection({
+class BalanceSection extends ConsumerWidget {
+  const BalanceSection({
     super.key,
     required this.details,
     this.manualTransactionActionBuilder,
@@ -23,9 +23,9 @@ class WalletBalanceSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = context.walletL10n;
+    final l10n = context.l10n;
     final wallet = details.wallet;
-    final localizedLastUpdate = wallet.lastBalanceAt.toFormattedWalletDate(context);
+    final localizedLastUpdate = wallet.lastBalanceAt.toFormattedDate(context);
 
     final currentUser = ref.watch(walletAuthProvider).currentUser;
     final isOwner = currentUser?.uid == wallet.ownerUid;
@@ -33,12 +33,12 @@ class WalletBalanceSection extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        WalletBalanceCard(
+        BalanceCard(
           balance: wallet.currentBalance,
           sentAmount: wallet.totalSent,
           receivedAmount: wallet.totalReceived,
           lastActivityText: localizedLastUpdate,
-          statsResetDateText: wallet.statsResetAt?.toFormattedWalletDate(context),
+          statsResetDateText: wallet.statsResetAt?.toFormattedDate(context),
           onReset: isOwner ? () => _handleReset(context, ref) : null,
         ),
         if (isOwner) ...[
@@ -51,7 +51,7 @@ class WalletBalanceSection extends ConsumerWidget {
             label: l10n.walletBalanceEditAction,
             type: .secondary,
             icon: const Icon(Icons.edit_outlined),
-            onPressed: () => EditWalletBalanceBottomSheet.show(
+            onPressed: () => EditBalanceBottomSheet.show(
               context,
               walletId: wallet.id,
               currentBalance: wallet.currentBalance,
@@ -64,7 +64,7 @@ class WalletBalanceSection extends ConsumerWidget {
   }
 
   Future<void> _handleReset(BuildContext context, WidgetRef ref) async {
-    final l10n = context.walletL10n;
+    final l10n = context.l10n;
     final confirmed = await MahafezDialog.show<bool>(
       context,
       title: l10n.walletResetStats,

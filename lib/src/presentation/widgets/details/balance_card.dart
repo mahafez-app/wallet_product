@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
-import '../../../localization/wallet_localization.dart';
 import '../../utils/amount_extension.dart';
+import '../../utils/localization_extension.dart';
 
-class WalletBalanceCard extends StatelessWidget {
-  const WalletBalanceCard({
+class BalanceCard extends StatelessWidget {
+  const BalanceCard({
     super.key,
     required this.balance,
     required this.sentAmount,
@@ -24,7 +24,7 @@ class WalletBalanceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.walletL10n;
+    final l10n = context.l10n;
     final colors = context.mahafezColors;
     final theme = Theme.of(context);
 
@@ -90,7 +90,7 @@ class WalletBalanceCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                balance.toLocalizedWalletAmount(context),
+                balance.toLocalizedAmount(context),
                 style: theme.textTheme.displaySmall?.copyWith(
                   color: colors.statsOnGradient,
                   fontSize: 36.responsiveFont,
@@ -137,7 +137,7 @@ class WalletBalanceCard extends StatelessWidget {
                   ),
                   MahafezSpacing.xs.horizontalSpace,
                   Text(
-                    l10n.walletStatsFrom(statsResetDateText!),
+                    l10n.statsFrom(statsResetDateText!),
                     style: theme.textTheme.labelSmall?.copyWith(
                       color: colors.statsOnGradient.withAlpha(200),
                       fontWeight: FontWeight.w600,
@@ -154,7 +154,7 @@ class WalletBalanceCard extends StatelessWidget {
               Expanded(
                 child: _StatBox(
                   title: l10n.totalOut,
-                  amount: '- ${sentAmount.abs().toLocalizedWalletAmount(context)}',
+                  amount: '- ${sentAmount.abs().toLocalizedAmount(context)}',
                   amountColor: colors.statsSentColor,
                   icon: Icons.arrow_outward,
                   iconColor: colors.statsSentColor,
@@ -164,7 +164,7 @@ class WalletBalanceCard extends StatelessWidget {
               Expanded(
                 child: _StatBox(
                   title: l10n.totalIn,
-                  amount: '+ ${receivedAmount.abs().toLocalizedWalletAmount(context)}',
+                  amount: '+ ${receivedAmount.abs().toLocalizedAmount(context)}',
                   amountColor: colors.statsReceivedColor,
                   icon: Icons.arrow_downward,
                   iconColor: colors.statsReceivedColor,

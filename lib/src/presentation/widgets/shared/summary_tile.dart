@@ -3,12 +3,12 @@ import 'package:mahafez_core/mahafez_core.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
 import '../../../domain/entities/wallet_entity.dart';
-import '../../../localization/wallet_localization.dart';
-import '../../utils/wallet_provider_ext.dart';
-import 'wallet_provider_icon.dart';
+import '../../utils/localization_extension.dart';
+import '../../utils/provider_ext.dart';
+import 'provider_icon.dart';
 
-class AppWalletTile extends StatelessWidget {
-  const AppWalletTile({
+class SummaryTile extends StatelessWidget {
+  const SummaryTile({
     super.key,
     required this.wallet,
     this.ownerName,
@@ -36,7 +36,7 @@ class AppWalletTile extends StatelessWidget {
     final provider = wallet.provider;
     final resolvedOwnerName = ownerName?.trim().isNotEmpty == true
         ? ownerName!.trim()
-        : context.walletL10n.workspaceUnknownMember;
+        : context.l10n.workspaceUnknownMember;
 
     return Container(
       padding: MahafezResponsive.allPadding(MahafezSpacing.lg),
@@ -54,7 +54,7 @@ class AppWalletTile extends StatelessWidget {
       ),
       child: Row(
         children: [
-          WalletProviderIcon(
+          ProviderIcon(
             provider: provider,
             size: MahafezSpacing.xxl.responsiveRadius,
           ),

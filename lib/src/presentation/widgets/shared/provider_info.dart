@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:mahafez_core/mahafez_core.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
-import '../../../localization/wallet_localization.dart';
-import '../../utils/wallet_provider_ext.dart';
-import 'wallet_provider_icon.dart';
+import '../../utils/localization_extension.dart';
+import '../../utils/provider_ext.dart';
+import 'provider_icon.dart';
 
-class WalletProviderInfo extends StatelessWidget {
-  const WalletProviderInfo({
+class ProviderInfo extends StatelessWidget {
+  const ProviderInfo({
     super.key,
     required this.provider,
     required this.phoneNumber,
@@ -25,7 +25,7 @@ class WalletProviderInfo extends StatelessWidget {
 
     return Row(
       children: [
-        WalletProviderIcon(provider: provider, size: 40.responsiveRadius),
+        ProviderIcon(provider: provider, size: 40.responsiveRadius),
         MahafezSpacing.md.horizontalSpace,
         Expanded(
           child: Column(
@@ -56,14 +56,14 @@ class WalletProviderInfo extends StatelessWidget {
           ),
         ),
         MahafezSpacing.md.horizontalSpace,
-        _WalletStatusBadge(provider: provider),
+        _StatusBadge(provider: provider),
       ],
     );
   }
 }
 
-class _WalletStatusBadge extends StatelessWidget {
-  const _WalletStatusBadge({required this.provider});
+class _StatusBadge extends StatelessWidget {
+  const _StatusBadge({required this.provider});
 
   final WalletProvider provider;
 
@@ -98,7 +98,7 @@ class _WalletStatusBadge extends StatelessWidget {
           ),
           MahafezSpacing.xs.horizontalSpace,
           Text(
-            context.walletL10n.walletStatusActive.toUpperCase(),
+            context.l10n.walletStatusActive.toUpperCase(),
             style: Theme.of(context).textTheme.labelSmall?.copyWith(
               color: provider.brandColor,
               fontWeight: FontWeight.w900,

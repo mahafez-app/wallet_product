@@ -3,13 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
 import '../../domain/entities/wallet_details_entity.dart';
-import '../../localization/wallet_localization.dart';
 import '../providers/wallet_details_controller.dart';
-import '../widgets/shared/wallet_provider_info.dart';
-import '../widgets/wallet_details/wallet_balance_section.dart';
+import '../utils/localization_extension.dart';
+import '../widgets/details/balance_section.dart';
+import '../widgets/shared/provider_info.dart';
 
-class WalletDetailsScreen extends StatelessWidget {
-  const WalletDetailsScreen({
+class DetailsScreen extends StatelessWidget {
+  const DetailsScreen({
     super.key,
     required this.walletId,
     this.onReportsPressed,
@@ -29,7 +29,7 @@ class WalletDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.walletL10n;
+    final l10n = context.l10n;
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.walletDetails),
@@ -43,7 +43,7 @@ class WalletDetailsScreen extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: _WalletDetailsBody(
+        child: _DetailsBody(
           walletId: walletId,
           manualTransactionActionBuilder: manualTransactionActionBuilder,
           syncSectionBuilder: syncSectionBuilder,
@@ -54,8 +54,8 @@ class WalletDetailsScreen extends StatelessWidget {
   }
 }
 
-class _WalletDetailsBody extends ConsumerWidget {
-  const _WalletDetailsBody({
+class _DetailsBody extends ConsumerWidget {
+  const _DetailsBody({
     required this.walletId,
     this.manualTransactionActionBuilder,
     this.syncSectionBuilder,
@@ -81,12 +81,12 @@ class _WalletDetailsBody extends ConsumerWidget {
         padding: MahafezSpacing.pagePadding,
         child: Column(
           children: [
-            WalletBalanceSection(
+            BalanceSection(
               details: details,
               manualTransactionActionBuilder: manualTransactionActionBuilder,
             ),
             MahafezSpacing.md.verticalSpace,
-            _WalletInfoSection(details: details),
+            _InfoSection(details: details),
             if (syncSectionBuilder != null) ...[
               MahafezSpacing.md.verticalSpace,
               syncSectionBuilder!(context, details),
@@ -102,8 +102,8 @@ class _WalletDetailsBody extends ConsumerWidget {
   }
 }
 
-class _WalletInfoSection extends StatelessWidget {
-  const _WalletInfoSection({required this.details});
+class _InfoSection extends StatelessWidget {
+  const _InfoSection({required this.details});
 
   final WalletDetailsEntity details;
 
@@ -119,7 +119,7 @@ class _WalletInfoSection extends StatelessWidget {
         borderRadius: BorderRadiusDirectional.circular(20.responsiveRadius),
         border: Border.all(color: colors.cardBorder),
       ),
-      child: WalletProviderInfo(
+      child: ProviderInfo(
         provider: wallet.provider,
         phoneNumber: wallet.phoneNumber,
         borderRadius: 8,

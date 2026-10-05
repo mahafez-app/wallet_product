@@ -3,9 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mahafez_core/mahafez_core.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
-import '../../localization/wallet_localization.dart';
 import '../providers/add_wallet_controller.dart';
 import '../providers/add_wallet_state.dart';
+import '../utils/localization_extension.dart';
 import '../widgets/add_wallet/add_wallet_content.dart';
 
 class AddWalletScreen extends StatelessWidget {
@@ -20,7 +20,7 @@ class AddWalletScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.walletL10n;
+    final l10n = context.l10n;
     return Scaffold(
       appBar: AppBar(title: Text(l10n.addWalletTitle), centerTitle: true),
       body: SafeArea(

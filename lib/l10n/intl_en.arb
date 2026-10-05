@@ -1,0 +1,38 @@
+{
+  "@@locale": "en",
+  "addWalletTitle": "Add Wallet",
+  "addWalletDescription": "Select provider and enter the mobile number linked to your wallet",
+  "addWalletAction": "Add Wallet",
+  "chooseProvider": "Choose Provider",
+  "phoneNumber": "Mobile Number",
+  "walletDetails": "Wallet Details",
+  "currentBalance": "Current Balance",
+  "currency": "EGP",
+  "lastActivity": "Last Activity",
+  "totalIn": "Total In",
+  "totalOut": "Total Out",
+  "walletBalanceEditAction": "Edit Balance Manually",
+  "walletBalanceEditSuccess": "Balance updated successfully",
+  "walletResetStats": "Reset Statistics",
+  "walletResetStatsDescription": "This will reset total sent and received amounts and set a new baseline.",
+  "walletResetStatsAction": "Reset",
+  "commonCancelAction": "Cancel",
+  "walletStatusActive": "Active",
+  "workspaceUnknownMember": "Unknown Member",
+  "providerVodafone": "Vodafone Cash",
+  "providerOrange": "Orange Money",
+  "providerEtisalat": "Etisalat Cash",
+  "providerWePay": "WE Pay",
+  "providerInstapay": "InstaPay",
+  "providerUnknown": "Other",
+  "statsFrom": "Since {date}",
+  "@statsFrom": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "invalidAmountError": "Please enter a valid amount",
+  "saveBalanceAction": "Save Balance"
+}

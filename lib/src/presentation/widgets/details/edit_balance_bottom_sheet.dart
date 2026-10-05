@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
-import '../../../localization/wallet_localization.dart';
 import '../../providers/wallet_balance_edit_controller.dart';
 import '../../providers/wallet_details_controller.dart';
 import '../../utils/amount_extension.dart';
+import '../../utils/localization_extension.dart';
 
-class EditWalletBalanceBottomSheet extends StatelessWidget {
-  const EditWalletBalanceBottomSheet({
+class EditBalanceBottomSheet extends StatelessWidget {
+  const EditBalanceBottomSheet({
     super.key,
     required this.walletId,
     required this.currentBalance,
@@ -32,7 +32,7 @@ class EditWalletBalanceBottomSheet extends StatelessWidget {
         padding: EdgeInsets.only(
           bottom: MediaQuery.of(context).viewInsets.bottom,
         ),
-        child: EditWalletBalanceBottomSheet(
+        child: EditBalanceBottomSheet(
           walletId: walletId,
           currentBalance: currentBalance,
           suggestedBalance: suggestedBalance,
@@ -43,7 +43,7 @@ class EditWalletBalanceBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _EditWalletBalanceBottomSheetBody(
+    return _EditBalanceBottomSheetBody(
       walletId: walletId,
       currentBalance: currentBalance,
       suggestedBalance: suggestedBalance,
@@ -51,8 +51,8 @@ class EditWalletBalanceBottomSheet extends StatelessWidget {
   }
 }
 
-class _EditWalletBalanceBottomSheetBody extends ConsumerStatefulWidget {
-  const _EditWalletBalanceBottomSheetBody({
+class _EditBalanceBottomSheetBody extends ConsumerStatefulWidget {
+  const _EditBalanceBottomSheetBody({
     required this.walletId,
     required this.currentBalance,
     required this.suggestedBalance,
@@ -63,12 +63,12 @@ class _EditWalletBalanceBottomSheetBody extends ConsumerStatefulWidget {
   final double suggestedBalance;
 
   @override
-  ConsumerState<_EditWalletBalanceBottomSheetBody> createState() =>
-      _EditWalletBalanceBottomSheetBodyState();
+  ConsumerState<_EditBalanceBottomSheetBody> createState() =>
+      _EditBalanceBottomSheetBodyState();
 }
 
-class _EditWalletBalanceBottomSheetBodyState
-    extends ConsumerState<_EditWalletBalanceBottomSheetBody> {
+class _EditBalanceBottomSheetBodyState
+    extends ConsumerState<_EditBalanceBottomSheetBody> {
   final _formKey = GlobalKey<FormState>();
   late final TextEditingController _balanceController;
 
@@ -99,7 +99,7 @@ class _EditWalletBalanceBottomSheetBodyState
           ref.invalidate(walletDetailsControllerProvider(widget.walletId));
           MahafezSnackbar.show(
             context,
-            message: context.walletL10n.walletBalanceEditSuccess,
+            message: context.l10n.walletBalanceEditSuccess,
             type: .success,
           );
           Navigator.of(context).pop();
@@ -111,7 +111,7 @@ class _EditWalletBalanceBottomSheetBodyState
       walletBalanceEditControllerProvider(widget.walletId),
     );
     final theme = Theme.of(context);
-    final l10n = context.walletL10n;
+    final l10n = context.l10n;
 
     return Padding(
       padding: MahafezResponsive.allPadding(MahafezSpacing.xl),
@@ -140,7 +140,7 @@ class _EditWalletBalanceBottomSheetBodyState
             ),
             MahafezSpacing.md.verticalSpace,
             Text(
-              '${l10n.currentBalance}: ${widget.currentBalance.toWalletCurrencyText(context)}',
+              '${l10n.currentBalance}: ${widget.currentBalance.toCurrencyText(context)}',
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
               ),
@@ -155,14 +155,14 @@ class _EditWalletBalanceBottomSheetBodyState
                 final normalized = value?.trim().replaceAll(',', '') ?? '';
                 final parsed = double.tryParse(normalized);
                 if (parsed == null || parsed < 0) {
-                  return 'يرجى إدخال مبلغ صحيح';
+                  return l10n.invalidAmountError;
                 }
                 return null;
               },
             ),
             MahafezSpacing.xl.verticalSpace,
             MahafezButton(
-              label: 'حفظ الرصيد',
+              label: l10n.saveBalanceAction,
               isLoading: editState.isSubmitting,
               onPressed: () {
                 if (_formKey.currentState?.validate() != true) return;

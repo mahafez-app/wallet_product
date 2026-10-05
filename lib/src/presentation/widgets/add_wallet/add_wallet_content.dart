@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mahafez_core/mahafez_core.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
-import '../../../localization/wallet_localization.dart';
 import '../../providers/add_wallet_state.dart';
-import 'add_wallet_phone_number_section.dart';
-import 'add_wallet_provider_grid.dart';
+import '../../utils/localization_extension.dart';
+import 'phone_number_section.dart';
+import 'provider_grid.dart';
 
 class AddWalletContent extends StatelessWidget {
   const AddWalletContent({
@@ -23,7 +23,7 @@ class AddWalletContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = context.walletL10n;
+    final s = context.l10n;
     final theme = Theme.of(context);
 
     return Column(
@@ -36,14 +36,14 @@ class AddWalletContent extends StatelessWidget {
               children: [
                 MahafezInfoCard(text: s.addWalletDescription),
                 MahafezSpacing.lg.verticalSpace,
-                AddWalletPhoneNumberSection(
+                PhoneNumberSection(
                   phoneNumber: state.phoneNumber,
                   onPhoneNumberChanged: onPhoneNumberChanged,
                 ),
                 MahafezSpacing.lg.verticalSpace,
                 Text(s.chooseProvider, style: theme.textTheme.titleMedium),
                 MahafezSpacing.md.verticalSpace,
-                AddWalletProviderGrid(
+                ProviderGrid(
                   selectedProviders: state.selectedProviders,
                   allowedProviders: state.allowedProviders,
                   onProviderToggled: onProviderToggled,

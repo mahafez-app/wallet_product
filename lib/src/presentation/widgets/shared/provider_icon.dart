@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mahafez_core/mahafez_core.dart';
 
-class WalletProviderIcon extends StatelessWidget {
-  const WalletProviderIcon({
+class ProviderIcon extends StatelessWidget {
+  const ProviderIcon({
     super.key,
     required this.provider,
     required this.size,

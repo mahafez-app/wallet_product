@@ -1,6 +1,5 @@
-
-// Localization
-export 'src/localization/wallet_localization.dart';
+// Generated Localizations
+export 'src/generated/wallet_localizations.dart';
 
 // Domain Entities
 export 'src/domain/entities/wallet_entity.dart';
@@ -35,21 +34,22 @@ export 'src/presentation/providers/wallet_balance_edit_controller.dart';
 
 // Presentation Screens
 export 'src/presentation/screens/add_wallet_screen.dart';
-export 'src/presentation/screens/wallet_details_screen.dart';
+export 'src/presentation/screens/details_screen.dart';
 
 // Presentation Widgets
-export 'src/presentation/widgets/shared/wallet_provider_icon.dart';
-export 'src/presentation/widgets/shared/wallet_provider_info.dart';
-export 'src/presentation/widgets/shared/app_wallet_tile.dart';
-export 'src/presentation/widgets/shared/wallet_card.dart';
-export 'src/presentation/widgets/wallet_details/wallet_balance_card.dart';
-export 'src/presentation/widgets/wallet_details/wallet_balance_section.dart';
-export 'src/presentation/widgets/wallet_details/edit_wallet_balance_bottom_sheet.dart';
+export 'src/presentation/widgets/shared/provider_icon.dart';
+export 'src/presentation/widgets/shared/provider_info.dart';
+export 'src/presentation/widgets/shared/summary_tile.dart';
+export 'src/presentation/widgets/shared/summary_card.dart';
+export 'src/presentation/widgets/details/balance_card.dart';
+export 'src/presentation/widgets/details/balance_section.dart';
+export 'src/presentation/widgets/details/edit_balance_bottom_sheet.dart';
 export 'src/presentation/widgets/add_wallet/add_wallet_content.dart';
-export 'src/presentation/widgets/add_wallet/add_wallet_phone_number_section.dart';
-export 'src/presentation/widgets/add_wallet/add_wallet_provider_grid.dart';
+export 'src/presentation/widgets/add_wallet/phone_number_section.dart';
+export 'src/presentation/widgets/add_wallet/provider_grid.dart';
 
 // Presentation Utilities
 export 'src/presentation/utils/amount_extension.dart';
 export 'src/presentation/utils/date_extensions.dart';
-export 'src/presentation/utils/wallet_provider_ext.dart';
+export 'src/presentation/utils/provider_ext.dart';
+export 'src/presentation/utils/localization_extension.dart';
