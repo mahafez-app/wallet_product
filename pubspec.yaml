@@ -5,8 +5,8 @@ repository: https://github.com/mahafez-app/wallet_product
 publish_to: 'none'
 
 environment:
-  sdk: ^3.11.4
-  flutter: ">=3.10.0"
+  sdk: ^3.13.3
+  flutter: ">=3.47.4"
 
 dependencies:
   flutter:
