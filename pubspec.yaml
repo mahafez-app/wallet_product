@@ -1,0 +1,41 @@
+name: mahafez_wallet_product
+description: Layer 3 Autonomous Wallet Domain Vertical Product Package for Mahafez.
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: ^3.11.4
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- Layer 1 Platform Packages ---
+  mahafez_core:
+    git:
+      url: https://github.com/mahafez-app/mahafez_core.git
+      ref: v1.0.1
+  mahafez_design_system:
+    git:
+      url: https://github.com/mahafez-app/mahafez_design_system.git
+      ref: v1.0.2
+
+  # --- Layer 2 Capabilities ---
+  mahafez_sms_engine:
+    git:
+      url: https://github.com/mahafez-app/mahafez_sms_engine.git
+      ref: v1.0.0
+
+  # State Management & Cloud Services
+  flutter_riverpod: ^3.3.1
+  cloud_firestore: ^6.2.0
+  firebase_auth: ^6.3.0
+  equatable: ^2.0.8
+  intl: ^0.20.2
+  flutter_svg: ^2.2.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
