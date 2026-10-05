@@ -265,6 +265,270 @@ abstract class WalletLocalizations {
   /// In ar, this message translates to:
   /// **'حفظ الرصيد'**
   String get saveBalanceAction;
+
+  /// No description provided for @errorManualTransactionMessageRequired.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصق نص الرسالة أولاً.'**
+  String get errorManualTransactionMessageRequired;
+
+  /// No description provided for @recentTransactions.
+  ///
+  /// In ar, this message translates to:
+  /// **'آخر المعاملات'**
+  String get recentTransactions;
+
+  /// No description provided for @startupFallbackRetryAction.
+  ///
+  /// In ar, this message translates to:
+  /// **'حاول مرة أخرى'**
+  String get startupFallbackRetryAction;
+
+  /// No description provided for @transactionTypeReceive.
+  ///
+  /// In ar, this message translates to:
+  /// **'استلام'**
+  String get transactionTypeReceive;
+
+  /// No description provided for @transactionTypeSend.
+  ///
+  /// In ar, this message translates to:
+  /// **'إرسال'**
+  String get transactionTypeSend;
+
+  /// No description provided for @viewAll.
+  ///
+  /// In ar, this message translates to:
+  /// **'عرض الكل'**
+  String get viewAll;
+
+  /// No description provided for @walletManualTransactionAnalyzeAction.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحليل الرسالة'**
+  String get walletManualTransactionAnalyzeAction;
+
+  /// No description provided for @walletManualTransactionBalanceChip.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرصيد بعد الرسالة: {amount}'**
+  String walletManualTransactionBalanceChip(Object amount);
+
+  /// No description provided for @walletManualTransactionConfirmAction.
+  ///
+  /// In ar, this message translates to:
+  /// **'حفظ على هذه المحفظة'**
+  String get walletManualTransactionConfirmAction;
+
+  /// No description provided for @walletManualTransactionDescription.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصق رسالة العملية الأصلية هنا، وسنطبق عليها نفس منطق التحليل والمطابقة المستخدم في القراءة التلقائية للرسائل.'**
+  String get walletManualTransactionDescription;
+
+  /// No description provided for @walletManualTransactionExplicitMismatchDescription.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرسالة تذكر رقم محفظة واضح لا يطابق المحفظة التي فتحتها الآن.'**
+  String get walletManualTransactionExplicitMismatchDescription;
+
+  /// No description provided for @walletManualTransactionExplicitMismatchTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرسالة تخص محفظة أخرى'**
+  String get walletManualTransactionExplicitMismatchTitle;
+
+  /// No description provided for @walletManualTransactionFieldHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصق الرسالة كاملة كما وصلتك'**
+  String get walletManualTransactionFieldHint;
+
+  /// No description provided for @walletManualTransactionFieldLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'نص الرسالة'**
+  String get walletManualTransactionFieldLabel;
+
+  /// No description provided for @walletManualTransactionForceAction.
+  ///
+  /// In ar, this message translates to:
+  /// **'حفظ رغم ذلك'**
+  String get walletManualTransactionForceAction;
+
+  /// No description provided for @walletManualTransactionInferredMismatchDescription.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرصيد الحالي وقواعد المطابقة تشير إلى محفظة مختلفة. احفظ هنا فقط لو أنت متأكد أن العملية يجب أن تُسجل على المحفظة الحالية.'**
+  String get walletManualTransactionInferredMismatchDescription;
+
+  /// No description provided for @walletManualTransactionInferredMismatchTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'محفظة أخرى تبدو أقرب'**
+  String get walletManualTransactionInferredMismatchTitle;
+
+  /// No description provided for @walletManualTransactionPasteAction.
+  ///
+  /// In ar, this message translates to:
+  /// **'لصق من الحافظة'**
+  String get walletManualTransactionPasteAction;
+
+  /// No description provided for @walletManualTransactionPhoneChip.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم المحفظة المذكور: {phoneNumber}'**
+  String walletManualTransactionPhoneChip(Object phoneNumber);
+
+  /// No description provided for @walletManualTransactionReviewDescription.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم تحليل الرسالة بنجاح، لكن لم نتمكن من تأكيد المحفظة بنسبة كاملة. راجع التفاصيل قبل المتابعة.'**
+  String get walletManualTransactionReviewDescription;
+
+  /// No description provided for @walletManualTransactionReviewTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'راجع المعاملة قبل الحفظ'**
+  String get walletManualTransactionReviewTitle;
+
+  /// No description provided for @walletManualTransactionSaveAction.
+  ///
+  /// In ar, this message translates to:
+  /// **'حفظ العملية'**
+  String get walletManualTransactionSaveAction;
+
+  /// No description provided for @walletManualTransactionSaved.
+  ///
+  /// In ar, this message translates to:
+  /// **'تمت إضافة المعاملة بنجاح.'**
+  String get walletManualTransactionSaved;
+
+  /// No description provided for @walletManualTransactionSuggestedWalletLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'المحفظة المقترحة'**
+  String get walletManualTransactionSuggestedWalletLabel;
+
+  /// No description provided for @walletManualTransactionTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'إضافة معاملة من SMS'**
+  String get walletManualTransactionTitle;
+
+  /// No description provided for @walletSyncTransactionsAction.
+  ///
+  /// In ar, this message translates to:
+  /// **'مزامنة المعاملات'**
+  String get walletSyncTransactionsAction;
+
+  /// No description provided for @walletSyncTransactionsDescription.
+  ///
+  /// In ar, this message translates to:
+  /// **'افحص رسائل الـ SMS الأخيرة للبحث عن معاملات وصلت بعد آخر نشاط محفوظ على هذه المحفظة.'**
+  String get walletSyncTransactionsDescription;
+
+  /// No description provided for @walletSyncTransactionsEmptyDescription.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم نجد أي معاملات SMS غير محفوظة لهذه المحفظة في سجل الرسائل الأخير.'**
+  String get walletSyncTransactionsEmptyDescription;
+
+  /// No description provided for @walletSyncTransactionsEmptySinceDescription.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم نجد أي معاملات SMS غير محفوظة بعد {date}.'**
+  String walletSyncTransactionsEmptySinceDescription(String date);
+
+  /// No description provided for @walletSyncTransactionsEmptyTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد معاملات فائتة'**
+  String get walletSyncTransactionsEmptyTitle;
+
+  /// No description provided for @walletSyncTransactionsFoundCount.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =0{لم نجد معاملات فائتة} =1{تم العثور على معاملة فائتة واحدة} other{تم العثور على {count} معاملات فائتة}}'**
+  String walletSyncTransactionsFoundCount(int count);
+
+  /// No description provided for @walletSyncTransactionsFromDate.
+  ///
+  /// In ar, this message translates to:
+  /// **'نفحص الرسائل بعد {date}'**
+  String walletSyncTransactionsFromDate(String date);
+
+  /// No description provided for @walletSyncTransactionsReviewTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'راجع المعاملات غير المحفوظة'**
+  String get walletSyncTransactionsReviewTitle;
+
+  /// No description provided for @walletSyncTransactionsSaveAction.
+  ///
+  /// In ar, this message translates to:
+  /// **'إضافة المحدد'**
+  String get walletSyncTransactionsSaveAction;
+
+  /// No description provided for @walletSyncTransactionsSavedSuccess.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =1{تمت إضافة معاملة واحدة بنجاح.} other{تمت إضافة {count} معاملات بنجاح.}}'**
+  String walletSyncTransactionsSavedSuccess(int count);
+
+  /// No description provided for @walletSyncTransactionsSelectedCount.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =0{لا توجد معاملات محددة} =1{معاملة واحدة محددة} other{{count} معاملات محددة}}'**
+  String walletSyncTransactionsSelectedCount(int count);
+
+  /// No description provided for @walletSyncTransactionsTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'مزامنة المعاملات الفائتة'**
+  String get walletSyncTransactionsTitle;
+
+  /// No description provided for @walletLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'محفظتك'**
+  String get walletLabel;
+
+  /// No description provided for @paymentStatus.
+  ///
+  /// In ar, this message translates to:
+  /// **'حالة السداد'**
+  String get paymentStatus;
+
+  /// No description provided for @transactionStatusPaid.
+  ///
+  /// In ar, this message translates to:
+  /// **'مدفوع'**
+  String get transactionStatusPaid;
+
+  /// No description provided for @transactionStatusUnpaid.
+  ///
+  /// In ar, this message translates to:
+  /// **'غير مدفوع'**
+  String get transactionStatusUnpaid;
+
+  /// No description provided for @transaction_receivedFrom.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم الاستلام من'**
+  String get transaction_receivedFrom;
+
+  /// No description provided for @transaction_sentTo.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم الإرسال إلى'**
+  String get transaction_sentTo;
+
+  /// No description provided for @transactions_emptyWalletDescription.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد معاملات على هذه المحفظة حتى الآن. أول ما توصلك رسائل جديدة هتظهر هنا تلقائياً.'**
+  String get transactions_emptyWalletDescription;
 }
 
 class _WalletLocalizationsDelegate

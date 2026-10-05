@@ -34,5 +34,94 @@
     }
   },
   "invalidAmountError": "Please enter a valid amount",
-  "saveBalanceAction": "Save Balance"
+  "saveBalanceAction": "Save Balance",
+  "errorManualTransactionMessageRequired": "Paste the SMS text first.",
+  "recentTransactions": "Recent Transactions",
+  "startupFallbackRetryAction": "Try again",
+  "transactionTypeReceive": "Receive",
+  "transactionTypeSend": "Send",
+  "viewAll": "View All",
+  "walletManualTransactionAnalyzeAction": "Process SMS",
+  "walletManualTransactionBalanceChip": "Balance after SMS: {amount}",
+  "@walletManualTransactionBalanceChip": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "walletManualTransactionConfirmAction": "Save to this wallet",
+  "walletManualTransactionDescription": "Paste the original transaction SMS here. We will parse it with the same wallet matching and transaction rules used by the automatic SMS flow.",
+  "walletManualTransactionExplicitMismatchDescription": "The message explicitly mentions a wallet phone number that does not match the wallet you opened.",
+  "walletManualTransactionExplicitMismatchTitle": "This SMS belongs to another wallet",
+  "walletManualTransactionFieldHint": "Paste the full transaction message",
+  "walletManualTransactionFieldLabel": "SMS text",
+  "walletManualTransactionForceAction": "Save Anyway",
+  "walletManualTransactionInferredMismatchDescription": "The balance and matching rules suggest a different wallet. Save here only if you are sure this SMS should stay under the current wallet.",
+  "walletManualTransactionInferredMismatchTitle": "Another wallet looks more likely",
+  "walletManualTransactionPasteAction": "Paste from clipboard",
+  "walletManualTransactionPhoneChip": "Mentioned wallet: {phoneNumber}",
+  "@walletManualTransactionPhoneChip": {
+    "placeholders": {
+      "phoneNumber": {}
+    }
+  },
+  "walletManualTransactionReviewDescription": "The SMS was parsed successfully, but the wallet could not be confirmed with full confidence. Review the details before continuing.",
+  "walletManualTransactionReviewTitle": "Review before saving",
+  "walletManualTransactionSaveAction": "Save Transaction",
+  "walletManualTransactionSaved": "Transaction added successfully.",
+  "walletManualTransactionSuggestedWalletLabel": "Suggested wallet",
+  "walletManualTransactionTitle": "Add Transaction From SMS",
+  "walletSyncTransactionsAction": "Sync transactions",
+  "walletSyncTransactionsDescription": "Check recent SMS messages for transactions that arrived after your latest saved wallet activity.",
+  "walletSyncTransactionsEmptyDescription": "We did not find any unsaved SMS transactions for this wallet in the recent inbox history.",
+  "walletSyncTransactionsEmptySinceDescription": "We did not find any unsaved SMS transactions after {date}.",
+  "@walletSyncTransactionsEmptySinceDescription": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "walletSyncTransactionsEmptyTitle": "No missing transactions found",
+  "walletSyncTransactionsFoundCount": "{count, plural, =0{No missing transactions found} =1{1 missing transaction found} other{{count} missing transactions found}}",
+  "@walletSyncTransactionsFoundCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "walletSyncTransactionsFromDate": "Checking messages after {date}",
+  "@walletSyncTransactionsFromDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "walletSyncTransactionsReviewTitle": "Review missing transactions",
+  "walletSyncTransactionsSaveAction": "Add selected",
+  "walletSyncTransactionsSavedSuccess": "{count, plural, =1{1 transaction added successfully.} other{{count} transactions added successfully.}}",
+  "@walletSyncTransactionsSavedSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "walletSyncTransactionsSelectedCount": "{count, plural, =0{No transactions selected} =1{1 transaction selected} other{{count} transactions selected}}",
+  "@walletSyncTransactionsSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "walletSyncTransactionsTitle": "Sync missed transactions",
+  "walletLabel": "Your wallet",
+  "paymentStatus": "Payment Status",
+  "transactionStatusPaid": "Paid",
+  "transactionStatusUnpaid": "Unpaid",
+  "transaction_receivedFrom": "Received From",
+  "transaction_sentTo": "Sent To",
+  "transactions_emptyWalletDescription": "This wallet has no transactions yet. New messages will appear here automatically."
 }

@@ -34,5 +34,94 @@
     }
   },
   "invalidAmountError": "يرجى إدخال مبلغ صحيح",
-  "saveBalanceAction": "حفظ الرصيد"
+  "saveBalanceAction": "حفظ الرصيد",
+  "errorManualTransactionMessageRequired": "الصق نص الرسالة أولاً.",
+  "recentTransactions": "آخر المعاملات",
+  "startupFallbackRetryAction": "حاول مرة أخرى",
+  "transactionTypeReceive": "استلام",
+  "transactionTypeSend": "إرسال",
+  "viewAll": "عرض الكل",
+  "walletManualTransactionAnalyzeAction": "تحليل الرسالة",
+  "walletManualTransactionBalanceChip": "الرصيد بعد الرسالة: {amount}",
+  "@walletManualTransactionBalanceChip": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "walletManualTransactionConfirmAction": "حفظ على هذه المحفظة",
+  "walletManualTransactionDescription": "الصق رسالة العملية الأصلية هنا، وسنطبق عليها نفس منطق التحليل والمطابقة المستخدم في القراءة التلقائية للرسائل.",
+  "walletManualTransactionExplicitMismatchDescription": "الرسالة تذكر رقم محفظة واضح لا يطابق المحفظة التي فتحتها الآن.",
+  "walletManualTransactionExplicitMismatchTitle": "الرسالة تخص محفظة أخرى",
+  "walletManualTransactionFieldHint": "الصق الرسالة كاملة كما وصلتك",
+  "walletManualTransactionFieldLabel": "نص الرسالة",
+  "walletManualTransactionForceAction": "حفظ رغم ذلك",
+  "walletManualTransactionInferredMismatchDescription": "الرصيد الحالي وقواعد المطابقة تشير إلى محفظة مختلفة. احفظ هنا فقط لو أنت متأكد أن العملية يجب أن تُسجل على المحفظة الحالية.",
+  "walletManualTransactionInferredMismatchTitle": "محفظة أخرى تبدو أقرب",
+  "walletManualTransactionPasteAction": "لصق من الحافظة",
+  "walletManualTransactionPhoneChip": "رقم المحفظة المذكور: {phoneNumber}",
+  "@walletManualTransactionPhoneChip": {
+    "placeholders": {
+      "phoneNumber": {}
+    }
+  },
+  "walletManualTransactionReviewDescription": "تم تحليل الرسالة بنجاح، لكن لم نتمكن من تأكيد المحفظة بنسبة كاملة. راجع التفاصيل قبل المتابعة.",
+  "walletManualTransactionReviewTitle": "راجع المعاملة قبل الحفظ",
+  "walletManualTransactionSaveAction": "حفظ العملية",
+  "walletManualTransactionSaved": "تمت إضافة المعاملة بنجاح.",
+  "walletManualTransactionSuggestedWalletLabel": "المحفظة المقترحة",
+  "walletManualTransactionTitle": "إضافة معاملة من SMS",
+  "walletSyncTransactionsAction": "مزامنة المعاملات",
+  "walletSyncTransactionsDescription": "افحص رسائل الـ SMS الأخيرة للبحث عن معاملات وصلت بعد آخر نشاط محفوظ على هذه المحفظة.",
+  "walletSyncTransactionsEmptyDescription": "لم نجد أي معاملات SMS غير محفوظة لهذه المحفظة في سجل الرسائل الأخير.",
+  "walletSyncTransactionsEmptySinceDescription": "لم نجد أي معاملات SMS غير محفوظة بعد {date}.",
+  "@walletSyncTransactionsEmptySinceDescription": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "walletSyncTransactionsEmptyTitle": "لا توجد معاملات فائتة",
+  "walletSyncTransactionsFoundCount": "{count, plural, =0{لم نجد معاملات فائتة} =1{تم العثور على معاملة فائتة واحدة} other{تم العثور على {count} معاملات فائتة}}",
+  "@walletSyncTransactionsFoundCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "walletSyncTransactionsFromDate": "نفحص الرسائل بعد {date}",
+  "@walletSyncTransactionsFromDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "walletSyncTransactionsReviewTitle": "راجع المعاملات غير المحفوظة",
+  "walletSyncTransactionsSaveAction": "إضافة المحدد",
+  "walletSyncTransactionsSavedSuccess": "{count, plural, =1{تمت إضافة معاملة واحدة بنجاح.} other{تمت إضافة {count} معاملات بنجاح.}}",
+  "@walletSyncTransactionsSavedSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "walletSyncTransactionsSelectedCount": "{count, plural, =0{لا توجد معاملات محددة} =1{معاملة واحدة محددة} other{{count} معاملات محددة}}",
+  "@walletSyncTransactionsSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "walletSyncTransactionsTitle": "مزامنة المعاملات الفائتة",
+  "walletLabel": "محفظتك",
+  "paymentStatus": "حالة السداد",
+  "transactionStatusPaid": "مدفوع",
+  "transactionStatusUnpaid": "غير مدفوع",
+  "transaction_receivedFrom": "تم الاستلام من",
+  "transaction_sentTo": "تم الإرسال إلى",
+  "transactions_emptyWalletDescription": "لا توجد معاملات على هذه المحفظة حتى الآن. أول ما توصلك رسائل جديدة هتظهر هنا تلقائياً."
 }
