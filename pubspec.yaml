@@ -1,6 +1,6 @@
 name: mahafez_wallet_product
 description: Layer 3 Autonomous Wallet Domain Vertical Product Package for Mahafez.
-version: 1.0.0
+version: 1.0.1
 publish_to: 'none'
 
 environment:
@@ -44,4 +44,7 @@ dev_dependencies:
 
 flutter:
   generate: true
+  assets:
+    - assets/icons/
+
 

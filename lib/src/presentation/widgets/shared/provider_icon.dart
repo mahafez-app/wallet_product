@@ -8,20 +8,26 @@ class ProviderIcon extends StatelessWidget {
     required this.provider,
     required this.size,
     this.fallbackColor,
-    this.assetPathResolver,
   });
+
+  static const String _packageName = 'mahafez_wallet_product';
 
   final WalletProvider provider;
   final double size;
   final Color? fallbackColor;
-  final String? Function(WalletProvider provider)? assetPathResolver;
 
-  static String? Function(WalletProvider provider)? globalAssetPathResolver;
+  static String? _resolveAssetPath(WalletProvider provider) => switch (provider) {
+    WalletProvider.vodafoneCash => 'assets/icons/vodafone.svg',
+    WalletProvider.orangeMoney => 'assets/icons/orange.svg',
+    WalletProvider.etisalatCash => 'assets/icons/etisalat.svg',
+    WalletProvider.wePay => 'assets/icons/we.png',
+    WalletProvider.instaPay => 'assets/icons/instapay.svg',
+    WalletProvider.unknown => null,
+  };
 
   @override
   Widget build(BuildContext context) {
-    final resolver = assetPathResolver ?? globalAssetPathResolver;
-    final assetPath = resolver != null ? resolver(provider) : null;
+    final assetPath = _resolveAssetPath(provider);
     final isSvg = assetPath?.toLowerCase().endsWith('.svg') ?? false;
 
     return SizedBox(
@@ -37,6 +43,7 @@ class ProviderIcon extends StatelessWidget {
             : isSvg
             ? SvgPicture.asset(
                 assetPath,
+                package: _packageName,
                 width: size,
                 height: size,
                 colorFilter: fallbackColor != null
@@ -45,6 +52,7 @@ class ProviderIcon extends StatelessWidget {
               )
             : Image.asset(
                 assetPath,
+                package: _packageName,
                 width: size,
                 height: size,
                 color: fallbackColor,
