@@ -45,6 +45,12 @@ final walletMetaCacheProvider = Provider<WalletMetaCache>((ref) {
   return WalletMetaCache();
 });
 
+/// Optional shell composition hook for cleaning up references owned by other
+/// products before the wallet product deletes a wallet.
+final walletDeletionHookProvider = Provider<WalletDeletionHook>((ref) {
+  return (_) async {};
+});
+
 // ── Internal Package Providers ───────────────────────────────────────────────
 
 final walletRemoteDataSourceProvider = Provider<WalletRemoteDataSource>((ref) {
@@ -67,6 +73,7 @@ final walletRepositoryProvider = Provider<WalletRepository>((ref) {
     detailsDataSource: ref.watch(walletDetailsRemoteDataSourceProvider),
     deviceIdProvider: ref.watch(walletDeviceIdProvider),
     walletMetaCache: ref.watch(walletMetaCacheProvider),
+    beforeDelete: ref.watch(walletDeletionHookProvider),
   );
 });
 
@@ -74,7 +81,9 @@ final addWalletsUseCaseProvider = Provider<AddWalletsUseCase>((ref) {
   return AddWalletsUseCase(ref.watch(walletRepositoryProvider));
 });
 
-final getWalletDetailsUseCaseProvider = Provider<GetWalletDetailsUseCase>((ref) {
+final getWalletDetailsUseCaseProvider = Provider<GetWalletDetailsUseCase>((
+  ref,
+) {
   return GetWalletDetailsUseCase(ref.watch(walletRepositoryProvider));
 });
 
@@ -86,11 +95,14 @@ final deleteWalletUseCaseProvider = Provider<DeleteWalletUseCase>((ref) {
   return DeleteWalletUseCase(ref.watch(walletRepositoryProvider));
 });
 
-final resetWalletStatsUseCaseProvider = Provider<ResetWalletStatsUseCase>((ref) {
+final resetWalletStatsUseCaseProvider = Provider<ResetWalletStatsUseCase>((
+  ref,
+) {
   return ResetWalletStatsUseCase(ref.watch(walletRepositoryProvider));
 });
 
-final updateWalletBalanceUseCaseProvider =
-    Provider<UpdateWalletBalanceUseCase>((ref) {
-      return UpdateWalletBalanceUseCase(ref.watch(walletRepositoryProvider));
-    });
+final updateWalletBalanceUseCaseProvider = Provider<UpdateWalletBalanceUseCase>(
+  (ref) {
+    return UpdateWalletBalanceUseCase(ref.watch(walletRepositoryProvider));
+  },
+);

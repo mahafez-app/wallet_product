@@ -1,4 +1,5 @@
 import 'package:mahafez_core/mahafez_core.dart';
+
 import '../../domain/entities/wallet_entity.dart';
 import '../../domain/repositories/wallet_repository.dart';
 import '../cache/wallet_meta_cache.dart';
@@ -11,21 +12,61 @@ final class WalletRepositoryImpl implements WalletRepository {
     required WalletDetailsRemoteDataSource detailsDataSource,
     required Future<String> Function() deviceIdProvider,
     required WalletMetaCache walletMetaCache,
+    WalletDeletionHook beforeDelete = _noOpDeletionHook,
   }) : _remoteDataSource = remoteDataSource,
        _detailsDataSource = detailsDataSource,
        _deviceIdProvider = deviceIdProvider,
-       _walletMetaCache = walletMetaCache;
+       _walletMetaCache = walletMetaCache,
+       _beforeDelete = beforeDelete;
+
+  static Future<void> _noOpDeletionHook(String _) async {}
 
   final WalletRemoteDataSource _remoteDataSource;
   final WalletDetailsRemoteDataSource _detailsDataSource;
   final Future<String> Function() _deviceIdProvider;
   final WalletMetaCache _walletMetaCache;
+  final WalletDeletionHook _beforeDelete;
 
   @override
   Future<Result<List<WalletEntity>>> getWallets() {
     return _execute(() async {
       final wallets = await _remoteDataSource.getWallets();
       return wallets.map((dto) => dto.toEntity()).toList();
+    });
+  }
+
+  @override
+  Stream<List<WalletEntity>> watchWallets() => _remoteDataSource
+      .watchWallets()
+      .map((wallets) => wallets.map((wallet) => wallet.toEntity()).toList());
+
+  @override
+  Future<Result<List<WalletEntity>>> getWalletsByIds(List<String> walletIds) {
+    return _execute(() async {
+      final wallets = await _remoteDataSource.getWalletsByIds(walletIds);
+      return wallets.map((wallet) => wallet.toEntity()).toList();
+    });
+  }
+
+  @override
+  Stream<List<WalletEntity>> watchWalletsByIds(List<String> walletIds) =>
+      _remoteDataSource
+          .watchWalletsByIds(walletIds)
+          .map(
+            (wallets) => wallets.map((wallet) => wallet.toEntity()).toList(),
+          );
+
+  @override
+  Future<Result<List<WalletEntity>>> getWalletsByOwnerAndProvider({
+    required String ownerUid,
+    required String provider,
+  }) {
+    return _execute(() async {
+      final wallets = await _remoteDataSource.getWalletsByOwnerAndProvider(
+        ownerUid: ownerUid,
+        provider: provider,
+      );
+      return wallets.map((wallet) => wallet.toEntity()).toList();
     });
   }
 
@@ -50,7 +91,9 @@ final class WalletRepositoryImpl implements WalletRepository {
   Future<Result<WalletEntity>> getWalletDetails(String walletId) {
     return _execute(() async {
       final walletDto = await _detailsDataSource.getWallet(walletId);
-      final latestBalance = await _detailsDataSource.getLatestActivityBalance(walletId);
+      final latestBalance = await _detailsDataSource.getLatestActivityBalance(
+        walletId,
+      );
       return walletDto.toEntity().copyWith(
         latestActivityBalance: latestBalance,
       );
@@ -60,6 +103,7 @@ final class WalletRepositoryImpl implements WalletRepository {
   @override
   Future<Result<void>> deleteWallet(String walletId) {
     return _execute(() async {
+      await _beforeDelete(walletId);
       await _remoteDataSource.deleteWallet(walletId);
       _walletMetaCache.invalidate(walletId);
     });
@@ -92,9 +136,7 @@ final class WalletRepositoryImpl implements WalletRepository {
     } on Failure catch (failure) {
       return FailureResult(failure);
     } catch (e) {
-      return FailureResult(UnknownFailure(
-        technicalMessage: e.toString(),
-      ));
+      return FailureResult(UnknownFailure(technicalMessage: e.toString()));
     }
   }
 }

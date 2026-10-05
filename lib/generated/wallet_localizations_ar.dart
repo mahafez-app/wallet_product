@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'wallet_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -642,4 +643,40 @@ class WalletLocalizationsAr extends WalletLocalizations {
   @override
   String get transactions_emptyMultiWalletDescription =>
       'لا توجد معاملات عبر هذه المحافظ حتى الآن.';
+
+  @override
+  String get reportPeriodToday => 'اليوم';
+
+  @override
+  String get reportPeriodYesterday => 'أمس';
+
+  @override
+  String get reportPeriodWeek => 'الأسبوع الماضي';
+
+  @override
+  String get reportPeriodMonth => 'الشهر الماضي';
+
+  @override
+  String get reportPeriodCustom => 'نطاق مخصص';
+
+  @override
+  String get reportAllWallets => 'كافة المحافظ';
+
+  @override
+  String get reportPerformance => 'الأداء المالي';
+
+  @override
+  String get reportBalance => 'صافي التدفق النقدي';
+
+  @override
+  String get reportTransactionCount => 'عدد المعاملات';
+
+  @override
+  String get reportDailyAverage => 'المتوسط اليومي';
+
+  @override
+  String get reportReceivedCount => 'المعاملات المستلمة';
+
+  @override
+  String get reportSentCount => 'المعاملات المرسلة';
 }

@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mahafez_core/mahafez_core.dart';
 import 'package:wallet_product/wallet_product.dart';
+import 'package:wallet_product/src/features/wallets/data/cache/wallet_meta_cache.dart';
 
 void main() {
   group('WalletEntity', () {

@@ -1177,6 +1177,78 @@ abstract class WalletLocalizations {
   /// In ar, this message translates to:
   /// **'لا توجد معاملات عبر هذه المحافظ حتى الآن.'**
   String get transactions_emptyMultiWalletDescription;
+
+  /// No description provided for @reportPeriodToday.
+  ///
+  /// In ar, this message translates to:
+  /// **'اليوم'**
+  String get reportPeriodToday;
+
+  /// No description provided for @reportPeriodYesterday.
+  ///
+  /// In ar, this message translates to:
+  /// **'أمس'**
+  String get reportPeriodYesterday;
+
+  /// No description provided for @reportPeriodWeek.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأسبوع الماضي'**
+  String get reportPeriodWeek;
+
+  /// No description provided for @reportPeriodMonth.
+  ///
+  /// In ar, this message translates to:
+  /// **'الشهر الماضي'**
+  String get reportPeriodMonth;
+
+  /// No description provided for @reportPeriodCustom.
+  ///
+  /// In ar, this message translates to:
+  /// **'نطاق مخصص'**
+  String get reportPeriodCustom;
+
+  /// No description provided for @reportAllWallets.
+  ///
+  /// In ar, this message translates to:
+  /// **'كافة المحافظ'**
+  String get reportAllWallets;
+
+  /// No description provided for @reportPerformance.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأداء المالي'**
+  String get reportPerformance;
+
+  /// No description provided for @reportBalance.
+  ///
+  /// In ar, this message translates to:
+  /// **'صافي التدفق النقدي'**
+  String get reportBalance;
+
+  /// No description provided for @reportTransactionCount.
+  ///
+  /// In ar, this message translates to:
+  /// **'عدد المعاملات'**
+  String get reportTransactionCount;
+
+  /// No description provided for @reportDailyAverage.
+  ///
+  /// In ar, this message translates to:
+  /// **'المتوسط اليومي'**
+  String get reportDailyAverage;
+
+  /// No description provided for @reportReceivedCount.
+  ///
+  /// In ar, this message translates to:
+  /// **'المعاملات المستلمة'**
+  String get reportReceivedCount;
+
+  /// No description provided for @reportSentCount.
+  ///
+  /// In ar, this message translates to:
+  /// **'المعاملات المرسلة'**
+  String get reportSentCount;
 }
 
 class _WalletLocalizationsDelegate

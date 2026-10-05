@@ -1,6 +1,6 @@
 name: wallet_product
 description: Layer 3 Autonomous Wallet & Transaction Domain Vertical Product Package.
-version: 1.1.0
+version: 2.0.0
 repository: https://github.com/mahafez-app/wallet_product
 publish_to: 'none'
 
@@ -34,6 +34,7 @@ dependencies:
   flutter_riverpod: ^3.3.1
   cloud_firestore: ^6.2.0
   firebase_auth: ^6.3.0
+  rxdart: ^0.28.0
   equatable: ^2.0.8
   intl: ^0.20.2
   flutter_svg: ^2.2.4

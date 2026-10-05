@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mahafez_core/mahafez_core.dart';
+import 'package:rxdart/rxdart.dart';
 
 import '../models/wallet_dto.dart';
 import 'wallet_remote_data_source.dart';
@@ -31,6 +32,60 @@ final class WalletRemoteDataSourceImpl implements WalletRemoteDataSource {
   }
 
   @override
+  Stream<List<WalletDto>> watchWallets() {
+    final currentUser = _auth.currentUser;
+    if (currentUser == null) {
+      return Stream.error(
+        const UnknownFailure(technicalMessage: 'User is not logged in'),
+      );
+    }
+    return _firestore
+        .collection('wallets')
+        .where('ownerUid', isEqualTo: currentUser.uid)
+        .snapshots()
+        .map((query) => query.docs.map(WalletDto.fromFirestore).toList());
+  }
+
+  @override
+  Future<List<WalletDto>> getWalletsByIds(List<String> walletIds) async {
+    if (walletIds.isEmpty) return const [];
+    final documents = await Future.wait(
+      walletIds.map((id) => _firestore.collection('wallets').doc(id).get()),
+    );
+    return documents
+        .where((document) => document.exists)
+        .map(WalletDto.fromFirestore)
+        .toList();
+  }
+
+  @override
+  Stream<List<WalletDto>> watchWalletsByIds(List<String> walletIds) {
+    if (walletIds.isEmpty) return Stream.value(const []);
+    final walletStreams = walletIds.toSet().map(
+      (id) => _firestore.collection('wallets').doc(id).snapshots(),
+    );
+    return Rx.combineLatestList(walletStreams).map(
+      (documents) => documents
+          .where((document) => document.exists)
+          .map(WalletDto.fromFirestore)
+          .toList(),
+    );
+  }
+
+  @override
+  Future<List<WalletDto>> getWalletsByOwnerAndProvider({
+    required String ownerUid,
+    required String provider,
+  }) async {
+    final query = await _firestore
+        .collection('wallets')
+        .where('ownerUid', isEqualTo: ownerUid)
+        .where('provider', isEqualTo: provider)
+        .get();
+    return query.docs.map(WalletDto.fromFirestore).toList();
+  }
+
+  @override
   Future<List<WalletDto>> addWallets({
     required String phoneNumber,
     required List<String> providers,
@@ -56,8 +111,7 @@ final class WalletRemoteDataSourceImpl implements WalletRemoteDataSource {
     if (providersToCreate.isEmpty) {
       throw const ValidationFailure(
         code: 'wallet-already-exists',
-        technicalMessage:
-            'A wallet already exists for this owner, provider, and phone number.',
+        technicalMessage: 'A wallet already exists for this owner, provider, and phone number.',
       );
     }
 
@@ -108,14 +162,8 @@ final class WalletRemoteDataSourceImpl implements WalletRemoteDataSource {
       );
     }
 
-    final workspaceLinks = await _getWorkspaceLinks(walletId);
     await _deleteWalletTransactions(walletRef);
-    await _deleteInBatches(workspaceLinks.linkReferences);
     await walletRef.delete();
-
-    for (final workspaceId in workspaceLinks.workspaceIds) {
-      await _syncWorkspaceMetadata(workspaceId);
-    }
   }
 
   @override
@@ -139,21 +187,6 @@ final class WalletRemoteDataSourceImpl implements WalletRemoteDataSource {
   }
 
   // ── Private helpers ──────────────────────────────────────────────────────
-
-  Future<_WorkspaceLinks> _getWorkspaceLinks(String walletId) async {
-    final linksQuery = await _firestore
-        .collectionGroup('wallets')
-        .where('walletId', isEqualTo: walletId)
-        .get();
-
-    return _WorkspaceLinks(
-      workspaceIds: linksQuery.docs
-          .map((doc) => doc.reference.parent.parent?.id)
-          .whereType<String>()
-          .toSet(),
-      linkReferences: linksQuery.docs.map((doc) => doc.reference).toList(),
-    );
-  }
 
   Future<void> _deleteWalletTransactions(
     DocumentReference<Map<String, dynamic>> walletRef,
@@ -210,39 +243,6 @@ final class WalletRemoteDataSourceImpl implements WalletRemoteDataSource {
     }
   }
 
-  Future<void> _syncWorkspaceMetadata(String workspaceId) async {
-    final workspaceRef = _firestore.collection('workspaces').doc(workspaceId);
-    final walletsQuery = await workspaceRef.collection('wallets').get();
-    final walletIds = walletsQuery.docs.map((doc) => doc.id).toList();
-
-    if (walletIds.isEmpty) {
-      await workspaceRef.update({'walletsCount': 0, 'latestActivityAt': null});
-      return;
-    }
-
-    final snapshots = await Future.wait(
-      walletIds.map((id) => _firestore.collection('wallets').doc(id).get()),
-    );
-
-    final wallets = snapshots
-        .where((s) => s.exists)
-        .map(WalletDto.fromFirestore)
-        .toList();
-
-    final latestActivityAt = wallets.isEmpty
-        ? null
-        : wallets
-              .map((w) => w.lastBalanceAt)
-              .reduce((a, b) => a.isAfter(b) ? a : b);
-
-    await workspaceRef.update({
-      'walletsCount': wallets.length,
-      'latestActivityAt': latestActivityAt == null
-          ? null
-          : Timestamp.fromDate(latestActivityAt),
-    });
-  }
-
   Future<Set<String>> _findExistingProviders({
     required String ownerUid,
     required String normalizedPhoneNumber,
@@ -264,14 +264,4 @@ final class WalletRemoteDataSourceImpl implements WalletRemoteDataSource {
         .map((wallet) => wallet.provider.toValue)
         .toSet();
   }
-}
-
-final class _WorkspaceLinks {
-  const _WorkspaceLinks({
-    required this.workspaceIds,
-    required this.linkReferences,
-  });
-
-  final Set<String> workspaceIds;
-  final List<DocumentReference<Map<String, dynamic>>> linkReferences;
 }

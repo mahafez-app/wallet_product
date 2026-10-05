@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'wallet_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -650,4 +651,40 @@ class WalletLocalizationsEn extends WalletLocalizations {
   @override
   String get transactions_emptyMultiWalletDescription =>
       'No transactions are available across these wallets yet.';
+
+  @override
+  String get reportPeriodToday => 'Today';
+
+  @override
+  String get reportPeriodYesterday => 'Yesterday';
+
+  @override
+  String get reportPeriodWeek => 'Last Week';
+
+  @override
+  String get reportPeriodMonth => 'Last Month';
+
+  @override
+  String get reportPeriodCustom => 'Custom Range';
+
+  @override
+  String get reportAllWallets => 'All Wallets';
+
+  @override
+  String get reportPerformance => 'Financial Performance';
+
+  @override
+  String get reportBalance => 'Net Cash Flow';
+
+  @override
+  String get reportTransactionCount => 'Transactions Count';
+
+  @override
+  String get reportDailyAverage => 'Daily Average';
+
+  @override
+  String get reportReceivedCount => 'Received transactions';
+
+  @override
+  String get reportSentCount => 'Sent transactions';
 }

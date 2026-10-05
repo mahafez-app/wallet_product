@@ -2,8 +2,8 @@
 export 'generated/wallet_localizations.dart';
 
 // Wallets - Domain
+export 'src/features/wallets/application/wallet_queries.dart';
 export 'src/features/wallets/domain/entities/wallet_entity.dart';
-export 'src/features/wallets/domain/repositories/wallet_repository.dart';
 export 'src/features/wallets/domain/usecases/add_wallets_usecase.dart';
 export 'src/features/wallets/domain/usecases/delete_wallet_usecase.dart';
 export 'src/features/wallets/domain/usecases/get_wallet_details_usecase.dart';
@@ -11,17 +11,13 @@ export 'src/features/wallets/domain/usecases/get_wallets_usecase.dart';
 export 'src/features/wallets/domain/usecases/reset_wallet_stats_usecase.dart';
 export 'src/features/wallets/domain/usecases/update_wallet_balance_usecase.dart';
 
-// Wallets - Data
-export 'src/features/wallets/data/cache/wallet_meta_cache.dart';
-export 'src/features/wallets/data/models/wallet_dto.dart';
-export 'src/features/wallets/data/datasources/wallet_remote_data_source.dart';
-export 'src/features/wallets/data/datasources/wallet_remote_data_source_impl.dart';
-export 'src/features/wallets/data/datasources/wallet_details_remote_data_source.dart';
-export 'src/features/wallets/data/datasources/wallet_details_remote_data_source_impl.dart';
-export 'src/features/wallets/data/repositories/wallet_repository_impl.dart';
-
 // Wallets - Presentation
-export 'src/features/wallets/presentation/controllers/wallet_providers.dart';
+export 'src/features/wallets/presentation/controllers/wallet_providers.dart'
+    show
+        walletDeviceIdProvider,
+        walletDeletionHookProvider,
+        getWalletsUseCaseProvider,
+        deleteWalletUseCaseProvider;
 export 'src/features/wallets/presentation/controllers/add_wallet_controller.dart';
 export 'src/features/wallets/presentation/controllers/add_wallet_state.dart';
 export 'src/features/wallets/presentation/controllers/wallet_details_controller.dart';
@@ -38,6 +34,7 @@ export 'src/features/wallets/presentation/widgets/provider_grid.dart';
 export 'src/features/wallets/presentation/widgets/phone_number_section.dart';
 
 // Transactions - Domain
+export 'src/features/transactions/integration/background_transaction_store.dart';
 export 'src/features/transactions/domain/entities/transaction_entity.dart';
 export 'src/features/transactions/domain/entities/missing_transactions_preview.dart';
 export 'src/features/transactions/domain/entities/manual_transaction_assessment.dart';
@@ -48,6 +45,7 @@ export 'src/features/transactions/domain/entities/note_entity.dart';
 export 'src/features/transactions/domain/entities/transaction_history_entry_entity.dart';
 export 'src/features/transactions/domain/entities/transactions_overview_entity.dart';
 export 'src/features/transactions/domain/entities/transaction_report_entity.dart';
+export 'src/features/transactions/domain/entities/transaction_report_filter.dart';
 export 'src/features/transactions/domain/repositories/transaction_repository.dart';
 export 'src/features/transactions/domain/usecases/preview_missing_transactions_usecase.dart';
 export 'src/features/transactions/domain/usecases/process_manual_transaction_usecase.dart';
@@ -62,21 +60,13 @@ export 'src/features/transactions/domain/usecases/mark_paid_usecases.dart';
 export 'src/features/transactions/domain/usecases/note_usecases.dart';
 export 'src/features/transactions/domain/usecases/watch_transaction_usecase.dart';
 
-// Transactions - Data
-export 'src/features/transactions/data/models/transaction_dto.dart';
-export 'src/features/transactions/data/models/transaction_page_dto.dart';
-export 'src/features/transactions/data/models/transaction_search_terms.dart';
-export 'src/features/transactions/data/models/transactions_overview_dto.dart';
-export 'src/features/transactions/data/datasources/wallet_transaction_remote_data_source.dart';
-export 'src/features/transactions/data/datasources/multi_wallet_transaction_remote_data_source.dart';
-export 'src/features/transactions/data/datasources/multi_wallet_transactions_overview_remote_data_source.dart';
-export 'src/features/transactions/data/datasources/transaction_firestore_support.dart';
-export 'src/features/transactions/data/datasources/transaction_cache_local_data_source.dart';
-export 'src/features/transactions/data/datasources/deleted_transaction_local_data_source.dart';
-export 'src/features/transactions/data/repositories/transaction_repository_impl.dart';
-
 // Transactions - Presentation
-export 'src/features/transactions/presentation/controllers/transaction_providers.dart';
+export 'src/features/transactions/presentation/controllers/transaction_providers.dart'
+    show
+        getTransactionsReportUseCaseProvider,
+        saveTransactionUseCaseProvider,
+        getLatestTransactionDateUseCaseProvider,
+        pruneDeletedTransactionTombstonesProvider;
 export 'src/features/transactions/presentation/controllers/transaction_sync_controller.dart';
 export 'src/features/transactions/presentation/controllers/transaction_sync_state.dart';
 export 'src/features/transactions/presentation/controllers/manual_transaction_controller.dart';
@@ -90,6 +80,7 @@ export 'src/features/transactions/presentation/controllers/notes/notes_controlle
 export 'src/features/transactions/presentation/controllers/notes/notes_state.dart';
 export 'src/features/transactions/presentation/ledger/navigation/transactions_route_data.dart';
 export 'src/features/transactions/presentation/ledger/screens/transactions_screen.dart';
+export 'src/features/transactions/presentation/reports/wallet_transaction_report_screen.dart';
 
 // Transactions - Presentation Widgets
 export 'src/features/transactions/presentation/widgets/transaction_card.dart';

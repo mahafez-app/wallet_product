@@ -293,5 +293,17 @@
   "transactions_filterWallet": "Wallet",
   "justNow": "Just Now",
   "minutesAgo": "{minutes} mins ago",
-  "transactions_emptyMultiWalletDescription": "No transactions are available across these wallets yet."
+  "transactions_emptyMultiWalletDescription": "No transactions are available across these wallets yet.",
+  "reportPeriodToday": "Today",
+  "reportPeriodYesterday": "Yesterday",
+  "reportPeriodWeek": "Last Week",
+  "reportPeriodMonth": "Last Month",
+  "reportPeriodCustom": "Custom Range",
+  "reportAllWallets": "All Wallets",
+  "reportPerformance": "Financial Performance",
+  "reportBalance": "Net Cash Flow",
+  "reportTransactionCount": "Transactions Count",
+  "reportDailyAverage": "Daily Average",
+  "reportReceivedCount": "Received transactions",
+  "reportSentCount": "Sent transactions"
 }

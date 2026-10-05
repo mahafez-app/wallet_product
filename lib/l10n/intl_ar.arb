@@ -293,5 +293,17 @@
   "transactions_filterWallet": "المحفظة",
   "justNow": "الآن",
   "minutesAgo": "منذ {minutes} دقيقة",
-  "transactions_emptyMultiWalletDescription": "لا توجد معاملات عبر هذه المحافظ حتى الآن."
+  "transactions_emptyMultiWalletDescription": "لا توجد معاملات عبر هذه المحافظ حتى الآن.",
+  "reportPeriodToday": "اليوم",
+  "reportPeriodYesterday": "أمس",
+  "reportPeriodWeek": "الأسبوع الماضي",
+  "reportPeriodMonth": "الشهر الماضي",
+  "reportPeriodCustom": "نطاق مخصص",
+  "reportAllWallets": "كافة المحافظ",
+  "reportPerformance": "الأداء المالي",
+  "reportBalance": "صافي التدفق النقدي",
+  "reportTransactionCount": "عدد المعاملات",
+  "reportDailyAverage": "المتوسط اليومي",
+  "reportReceivedCount": "المعاملات المستلمة",
+  "reportSentCount": "المعاملات المرسلة"
 }

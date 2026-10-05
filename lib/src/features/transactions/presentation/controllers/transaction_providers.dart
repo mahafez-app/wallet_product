@@ -93,6 +93,12 @@ final multiWalletTransactionRemoteDataSourceProvider =
       );
     });
 
+/// Product operation for pruning locally deleted transaction tombstones.
+final pruneDeletedTransactionTombstonesProvider =
+    Provider<Future<void> Function()>((ref) {
+      return ref.watch(deletedTransactionLocalDataSourceProvider).pruneExpired;
+    });
+
 final multiWalletTransactionsOverviewRemoteDataSourceProvider =
     Provider<MultiWalletTransactionsOverviewRemoteDataSource>((ref) {
       return MultiWalletTransactionsOverviewRemoteDataSourceImpl(
