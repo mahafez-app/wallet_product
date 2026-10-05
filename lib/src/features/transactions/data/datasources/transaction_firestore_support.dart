@@ -10,10 +10,9 @@ import '../models/transaction_search_terms.dart';
 
 class TransactionFirestoreSupport {
   const TransactionFirestoreSupport({
-    required FirebaseFirestore firestore,
-    required WalletMetaCache metaCache,
-  }) : _firestore = firestore,
-       _metaCache = metaCache;
+    required this._firestore,
+    required this._metaCache,
+  });
 
   final FirebaseFirestore _firestore;
   final WalletMetaCache _metaCache;

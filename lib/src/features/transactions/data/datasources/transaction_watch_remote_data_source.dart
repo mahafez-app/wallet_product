@@ -11,8 +11,8 @@ abstract interface class TransactionWatchRemoteDataSource {
 final class TransactionWatchRemoteDataSourceImpl
     implements TransactionWatchRemoteDataSource {
   const TransactionWatchRemoteDataSourceImpl({
-    required TransactionFirestoreSupport support,
-  }) : _support = support;
+    required this._support,
+  });
 
   final TransactionFirestoreSupport _support;
 

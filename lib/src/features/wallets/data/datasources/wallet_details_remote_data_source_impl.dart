@@ -6,8 +6,8 @@ import 'wallet_details_remote_data_source.dart';
 final class WalletDetailsRemoteDataSourceImpl
     implements WalletDetailsRemoteDataSource {
   const WalletDetailsRemoteDataSourceImpl({
-    required FirebaseFirestore firestore,
-  }) : _firestore = firestore;
+    required this._firestore,
+  });
 
   final FirebaseFirestore _firestore;
 

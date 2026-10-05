@@ -24,8 +24,8 @@ abstract interface class MultiWalletTransactionRemoteDataSource {
 final class MultiWalletTransactionRemoteDataSourceImpl
     implements MultiWalletTransactionRemoteDataSource {
   const MultiWalletTransactionRemoteDataSourceImpl({
-    required TransactionFirestoreSupport support,
-  }) : _support = support;
+    required this._support,
+  });
 
   final TransactionFirestoreSupport _support;
 

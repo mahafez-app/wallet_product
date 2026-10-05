@@ -8,16 +8,12 @@ import '../datasources/wallet_remote_data_source.dart';
 
 final class WalletRepositoryImpl implements WalletRepository {
   const WalletRepositoryImpl({
-    required WalletRemoteDataSource remoteDataSource,
-    required WalletDetailsRemoteDataSource detailsDataSource,
-    required Future<String> Function() deviceIdProvider,
-    required WalletMetaCache walletMetaCache,
-    WalletDeletionHook beforeDelete = _noOpDeletionHook,
-  }) : _remoteDataSource = remoteDataSource,
-       _detailsDataSource = detailsDataSource,
-       _deviceIdProvider = deviceIdProvider,
-       _walletMetaCache = walletMetaCache,
-       _beforeDelete = beforeDelete;
+    required this._remoteDataSource,
+    required this._detailsDataSource,
+    required this._deviceIdProvider,
+    required this._walletMetaCache,
+    this._beforeDelete = _noOpDeletionHook,
+  });
 
   static Future<void> _noOpDeletionHook(String _) async {}
 

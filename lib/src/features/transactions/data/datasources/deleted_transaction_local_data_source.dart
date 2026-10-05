@@ -15,8 +15,7 @@ abstract interface class DeletedTransactionLocalDataSource {
 
 final class DeletedTransactionLocalDataSourceImpl
     implements DeletedTransactionLocalDataSource {
-  const DeletedTransactionLocalDataSourceImpl({required Box<String> box})
-    : _box = box;
+  const DeletedTransactionLocalDataSourceImpl({required this._box});
 
   final Box<String> _box;
 

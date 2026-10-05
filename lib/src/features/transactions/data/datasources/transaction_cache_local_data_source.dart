@@ -26,8 +26,7 @@ abstract interface class TransactionCacheLocalDataSource {
 
 final class TransactionCacheLocalDataSourceImpl
     implements TransactionCacheLocalDataSource {
-  const TransactionCacheLocalDataSourceImpl({required Box<String> box})
-      : _box = box;
+  const TransactionCacheLocalDataSourceImpl({required this._box});
 
   final Box<String> _box;
 

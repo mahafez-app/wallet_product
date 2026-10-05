@@ -1,6 +1,6 @@
 /// In-memory, TTL-based cache for wallet metadata.
 final class WalletMetaCache {
-  WalletMetaCache({Duration ttl = const Duration(minutes: 10)}) : _ttl = ttl;
+  WalletMetaCache({this._ttl = const Duration(minutes: 10)});
 
   final Duration _ttl;
   final Map<String, _WalletMetaEntry> _store = {};

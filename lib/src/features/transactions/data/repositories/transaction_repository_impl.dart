@@ -24,22 +24,15 @@ import '../models/transaction_dto.dart';
 
 final class TransactionRepositoryImpl implements TransactionRepository {
   const TransactionRepositoryImpl({
-    required TransactionWatchRemoteDataSource transactionWatchRemoteDataSource,
-    required WalletTransactionRemoteDataSource walletRemoteDataSource,
-    required TransactionCacheLocalDataSource cacheDataSource,
-    required DeletedTransactionLocalDataSource deletedTransactionLocalDataSource,
-    required WalletRepository walletRepository,
-    required InboxSmsService inboxSmsService,
-    required MultiWalletTransactionRemoteDataSource multiWalletRemoteDataSource,
-    required MultiWalletTransactionsOverviewRemoteDataSource multiWalletOverviewRemoteDataSource,
-  })  : _transactionWatchRemoteDataSource = transactionWatchRemoteDataSource,
-        _walletRemoteDataSource = walletRemoteDataSource,
-        _cacheDataSource = cacheDataSource,
-        _deletedTransactionLocalDataSource = deletedTransactionLocalDataSource,
-        _walletRepository = walletRepository,
-        _inboxSmsService = inboxSmsService,
-        _multiWalletRemoteDataSource = multiWalletRemoteDataSource,
-        _multiWalletOverviewRemoteDataSource = multiWalletOverviewRemoteDataSource;
+    required this._transactionWatchRemoteDataSource,
+    required this._walletRemoteDataSource,
+    required this._cacheDataSource,
+    required this._deletedTransactionLocalDataSource,
+    required this._walletRepository,
+    required this._inboxSmsService,
+    required this._multiWalletRemoteDataSource,
+    required this._multiWalletOverviewRemoteDataSource,
+  });
 
   final TransactionWatchRemoteDataSource _transactionWatchRemoteDataSource;
   final WalletTransactionRemoteDataSource _walletRemoteDataSource;
