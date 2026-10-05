@@ -35,6 +35,7 @@ export 'src/features/wallets/presentation/widgets/phone_number_section.dart';
 
 // Transactions - Domain
 export 'src/features/transactions/integration/background_transaction_store.dart';
+export 'src/features/transactions/integration/sms/wallet_sms_transaction_service.dart';
 export 'src/features/transactions/domain/entities/transaction_entity.dart';
 export 'src/features/transactions/domain/entities/missing_transactions_preview.dart';
 export 'src/features/transactions/domain/entities/manual_transaction_assessment.dart';
@@ -66,7 +67,10 @@ export 'src/features/transactions/presentation/controllers/transaction_providers
         getTransactionsReportUseCaseProvider,
         saveTransactionUseCaseProvider,
         getLatestTransactionDateUseCaseProvider,
-        pruneDeletedTransactionTombstonesProvider;
+        pruneDeletedTransactionTombstonesProvider,
+        walletSmsRetryQueueProvider,
+        walletSmsTransactionServiceProvider,
+        walletSmsInboxAdapterProvider;
 export 'src/features/transactions/presentation/controllers/transaction_sync_controller.dart';
 export 'src/features/transactions/presentation/controllers/transaction_sync_state.dart';
 export 'src/features/transactions/presentation/controllers/manual_transaction_controller.dart';

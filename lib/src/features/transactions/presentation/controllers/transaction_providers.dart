@@ -29,6 +29,8 @@ import '../../domain/usecases/preview_missing_transactions_usecase.dart';
 import '../../domain/usecases/process_manual_transaction_usecase.dart';
 import '../../domain/usecases/save_transaction_usecase.dart';
 import '../../domain/usecases/watch_transaction_usecase.dart';
+import '../../integration/sms/wallet_inbox_sms_service.dart';
+import '../../integration/sms/wallet_sms_transaction_service.dart';
 
 // ── Injected External Hive Boxes ─────────────────────────────────────────────
 
@@ -47,6 +49,33 @@ final deletedTransactionsBoxProvider = Provider<Box<String>>((ref) {
 final inboxSmsServiceProvider = Provider<InboxSmsService>((ref) {
   return const InboxSmsServiceImpl();
 });
+
+final walletSmsInboxAdapterProvider = Provider<WalletSmsInboxAdapter>((ref) {
+  return const WalletSmsInboxAdapterImpl();
+});
+
+/// The host opens this durable queue during bootstrap and injects the box.
+final walletSmsRetryQueueProvider = Provider<Box<String>>((ref) {
+  throw StateError(
+    'walletSmsRetryQueueProvider must be overridden with the host Hive box.',
+  );
+});
+
+/// Product-owned SMS-to-transaction orchestration.
+final walletSmsTransactionServiceProvider =
+    Provider<WalletSmsTransactionService>(
+      (ref) => WalletSmsTransactionService(
+        saveTransactionUseCase: ref.watch(saveTransactionUseCaseProvider),
+        getLatestTransactionDateUseCase: ref.watch(
+          getLatestTransactionDateUseCaseProvider,
+        ),
+        getWalletsUseCase: ref.watch(getWalletsUseCaseProvider),
+        inboxSmsService: ref.watch(walletSmsInboxAdapterProvider),
+        pendingSmsRetryService: PendingSmsRetryService(
+          box: ref.watch(walletSmsRetryQueueProvider),
+        ),
+      ),
+    );
 
 // ── Infrastructure ───────────────────────────────────────────────────────────
 
