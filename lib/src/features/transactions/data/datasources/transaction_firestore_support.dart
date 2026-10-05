@@ -12,8 +12,8 @@ class TransactionFirestoreSupport {
   const TransactionFirestoreSupport({
     required FirebaseFirestore firestore,
     required WalletMetaCache metaCache,
-  })  : _firestore = firestore,
-        _metaCache = metaCache;
+  }) : _firestore = firestore,
+       _metaCache = metaCache;
 
   final FirebaseFirestore _firestore;
   final WalletMetaCache _metaCache;
@@ -27,7 +27,7 @@ class TransactionFirestoreSupport {
   /// Returns wallet provider/phone/ownerUid, hitting the in-memory TTL cache
   /// before falling back to a Firestore document read.
   ///
-  /// For a workspace with 3 wallets loading one page, this reduces 3 redundant
+  /// For 3 wallets loading one page, this reduces 3 redundant
   /// Firestore reads to at most 1 per wallet per TTL window.
   Future<({WalletProvider provider, String phoneNumber, String ownerUid})>
   walletMeta(String walletId) async {

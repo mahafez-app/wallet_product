@@ -13,7 +13,10 @@ import '../../domain/entities/transaction_history_entry_entity.dart';
 import '../../domain/entities/transaction_page.dart';
 import '../../domain/entities/transaction_paid_status_filter.dart';
 import '../../domain/repositories/transaction_repository.dart';
+import '../../domain/entities/transactions_overview_entity.dart';
 import '../datasources/deleted_transaction_local_data_source.dart';
+import '../datasources/multi_wallet_transaction_remote_data_source.dart';
+import '../datasources/multi_wallet_transactions_overview_remote_data_source.dart';
 import '../datasources/transaction_cache_local_data_source.dart';
 import '../datasources/transaction_watch_remote_data_source.dart';
 import '../datasources/wallet_transaction_remote_data_source.dart';
@@ -27,12 +30,16 @@ final class TransactionRepositoryImpl implements TransactionRepository {
     required DeletedTransactionLocalDataSource deletedTransactionLocalDataSource,
     required WalletRepository walletRepository,
     required InboxSmsService inboxSmsService,
+    required MultiWalletTransactionRemoteDataSource multiWalletRemoteDataSource,
+    required MultiWalletTransactionsOverviewRemoteDataSource multiWalletOverviewRemoteDataSource,
   })  : _transactionWatchRemoteDataSource = transactionWatchRemoteDataSource,
         _walletRemoteDataSource = walletRemoteDataSource,
         _cacheDataSource = cacheDataSource,
         _deletedTransactionLocalDataSource = deletedTransactionLocalDataSource,
         _walletRepository = walletRepository,
-        _inboxSmsService = inboxSmsService;
+        _inboxSmsService = inboxSmsService,
+        _multiWalletRemoteDataSource = multiWalletRemoteDataSource,
+        _multiWalletOverviewRemoteDataSource = multiWalletOverviewRemoteDataSource;
 
   final TransactionWatchRemoteDataSource _transactionWatchRemoteDataSource;
   final WalletTransactionRemoteDataSource _walletRemoteDataSource;
@@ -40,6 +47,8 @@ final class TransactionRepositoryImpl implements TransactionRepository {
   final DeletedTransactionLocalDataSource _deletedTransactionLocalDataSource;
   final WalletRepository _walletRepository;
   final InboxSmsService _inboxSmsService;
+  final MultiWalletTransactionRemoteDataSource _multiWalletRemoteDataSource;
+  final MultiWalletTransactionsOverviewRemoteDataSource _multiWalletOverviewRemoteDataSource;
 
   Future<Result<T>> _execute<T>(Future<T> Function() action) async {
     try {
@@ -53,6 +62,44 @@ final class TransactionRepositoryImpl implements TransactionRepository {
   }
 
   // ── Queries ──────────────────────────────────────────────────────────────
+
+  @override
+  Future<Result<TransactionPage>> getTransactions({
+    required List<String> walletIds,
+    TransactionType? type,
+    TransactionPaidStatusFilter paidStatusFilter =
+        TransactionPaidStatusFilter.all,
+    String? counterpartySuffixQuery,
+    TransactionDateRange? dateRange,
+    int limit = 20,
+    TransactionsPageCursor? cursor,
+  }) {
+    return _execute(() async {
+      final page = await _multiWalletRemoteDataSource.getTransactions(
+        walletIds: walletIds,
+        type: type,
+        paidStatusFilter: paidStatusFilter,
+        counterpartySuffixQuery: counterpartySuffixQuery,
+        dateRange: dateRange,
+        limit: limit,
+        cursor: cursor,
+      );
+      return page.toEntity();
+    });
+  }
+
+  @override
+  Future<Result<TransactionsOverviewEntity>> getTransactionsOverview({
+    required List<String> walletIds,
+  }) {
+    return _execute(() async {
+      final overview =
+          await _multiWalletOverviewRemoteDataSource.getTransactionsOverview(
+        walletIds: walletIds,
+      );
+      return overview.toEntity();
+    });
+  }
 
   @override
   Future<Result<TransactionPage>> getWalletTransactions({

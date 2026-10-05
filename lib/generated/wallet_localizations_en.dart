@@ -273,4 +273,381 @@ class WalletLocalizationsEn extends WalletLocalizations {
   @override
   String get transactions_emptyWalletDescription =>
       'This wallet has no transactions yet. New messages will appear here automatically.';
+
+  @override
+  String get errorNetwork =>
+      'No internet connection. Please check your network.';
+
+  @override
+  String get errorAuthUserNotFound =>
+      'User not found. Please check your credentials.';
+
+  @override
+  String get errorAuthWrongPassword => 'Incorrect password. Please try again.';
+
+  @override
+  String get errorAuthEmailInUse => 'This email is already registered.';
+
+  @override
+  String get errorAuthTooManyRequests =>
+      'Too many attempts. Please try again later.';
+
+  @override
+  String get errorAuthUserDisabled => 'This account has been disabled.';
+
+  @override
+  String get errorAuthWeakPassword =>
+      'Password is too weak. Please choose a stronger password.';
+
+  @override
+  String get errorAuthInvalidEmail => 'Invalid email address.';
+
+  @override
+  String get errorUnauthorized => 'Unauthorized access. Please log in again.';
+
+  @override
+  String get errorAuthGeneric => 'Authentication failed. Please try again.';
+
+  @override
+  String get errorForbidden => 'Access forbidden.';
+
+  @override
+  String get errorNotFound => 'Resource not found.';
+
+  @override
+  String get errorConflict => 'Resource conflict. Please try again.';
+
+  @override
+  String get errorUnprocessable => 'Unable to process your request.';
+
+  @override
+  String get errorServer => 'Server error. Please try again later.';
+
+  @override
+  String get errorServerGeneric => 'Something went wrong. Please try again.';
+
+  @override
+  String get errorPermissionDenied => 'Permission denied.';
+
+  @override
+  String get errorCache => 'Local storage error. Please try again.';
+
+  @override
+  String get errorStorage => 'File storage error.';
+
+  @override
+  String get errorValidation => 'Validation failed.';
+
+  @override
+  String errorValidationWithCode(String code) {
+    return 'Validation failed: $code';
+  }
+
+  @override
+  String get errorUnknown => 'An unexpected error occurred.';
+
+  @override
+  String get errorWalletPhoneNumberRequired => 'Please enter a phone number';
+
+  @override
+  String get errorWalletPhoneNumberInvalid =>
+      'Please enter a valid Egyptian mobile number.';
+
+  @override
+  String get errorWalletProviderRequired =>
+      'Please select at least one provider';
+
+  @override
+  String get errorWalletProviderMismatch =>
+      'This phone number only supports its matching mobile wallet provider and InstaPay.';
+
+  @override
+  String get errorWalletAlreadyExists => 'This wallet is already added.';
+
+  @override
+  String get errorWalletAllExists =>
+      'All selected wallets are already added for this phone number.';
+
+  @override
+  String get errorManualTransactionUnrecognized =>
+      'This text does not match the selected wallet\'s SMS format.';
+
+  @override
+  String get errorManualTransactionWalletMismatch =>
+      'This SMS points to a different wallet than the one currently open.';
+
+  @override
+  String get errorWorkspaceNameRequired => 'Please enter a workspace name';
+
+  @override
+  String get errorWorkspaceWalletSelectionRequired =>
+      'Please select at least one wallet';
+
+  @override
+  String get errorWorkspaceOwnerRemovalNotAllowed =>
+      'The workspace owner cannot be removed.';
+
+  @override
+  String get errorWorkspaceMemberNotFound =>
+      'This member is no longer available in the workspace.';
+
+  @override
+  String get errorInvitationSelfNotAllowed =>
+      'You cannot invite yourself to this workspace.';
+
+  @override
+  String get errorInvitationAlreadyPending =>
+      'A pending invitation already exists for this email.';
+
+  @override
+  String get errorInvitationUserNotFound =>
+      'This email is not linked to any Mahafez account.';
+
+  @override
+  String get errorInvitationUserAlreadyMember =>
+      'This user is already a member of the workspace.';
+
+  @override
+  String get errorInvitationNotPending =>
+      'This invitation is no longer pending.';
+
+  @override
+  String get transaction_shareReceipt => 'Share Receipt';
+
+  @override
+  String transaction_receiptHeader(String type) {
+    return 'Transaction Receipt — $type';
+  }
+
+  @override
+  String get transaction_amount => 'Amount';
+
+  @override
+  String get transaction_wallet => 'Wallet';
+
+  @override
+  String get transaction_date => 'Date';
+
+  @override
+  String get transaction_dateTime => 'Date & Time';
+
+  @override
+  String get transaction_referenceNumber => 'Reference Number';
+
+  @override
+  String get transaction_history => 'Change History';
+
+  @override
+  String transaction_markedAs(String status) {
+    return 'Marked as $status';
+  }
+
+  @override
+  String transaction_by(String name) {
+    return 'By $name';
+  }
+
+  @override
+  String get transaction_notes => 'Notes';
+
+  @override
+  String get transaction_addNote => 'Add Note';
+
+  @override
+  String get transaction_noteHint => 'Write your note here…';
+
+  @override
+  String get transaction_deleteAction => 'Delete';
+
+  @override
+  String get transaction_deleteTitle => 'Delete Transaction';
+
+  @override
+  String get transaction_deleteMessage =>
+      'Are you sure you want to delete this transaction? This action cannot be undone.';
+
+  @override
+  String get transaction_deletedSuccess => 'Transaction deleted';
+
+  @override
+  String get transaction_deleteNoteTitle => 'Delete Note';
+
+  @override
+  String get transaction_deleteNoteMessage =>
+      'Are you sure you want to delete this note? This action cannot be undone.';
+
+  @override
+  String get transaction_noteDeleted => 'Note deleted';
+
+  @override
+  String get transaction_undo => 'Undo';
+
+  @override
+  String get transaction_edited => 'Edited';
+
+  @override
+  String get transaction_cancel => 'Cancel';
+
+  @override
+  String get transaction_save => 'Save';
+
+  @override
+  String get transaction_smsText => 'SMS Text';
+
+  @override
+  String get transaction_typeReceiveLabel => 'Receive Transaction';
+
+  @override
+  String get transaction_typeSendLabel => 'Send Transaction';
+
+  @override
+  String get transaction_errorGeneric => 'An error occurred';
+
+  @override
+  String get errorTransactionNotFound =>
+      'This transaction is no longer available.';
+
+  @override
+  String get errorTransactionAlreadyExists =>
+      'This transaction has already been tracked.';
+
+  @override
+  String get transactions_emptyTitle => 'No transactions yet';
+
+  @override
+  String get transactions_emptyHintTitle => 'Automatic tracking';
+
+  @override
+  String get transactions_emptyHintDescription =>
+      'When activity is detected on a connected wallet, we sync it here for you automatically.';
+
+  @override
+  String get noTransactionsTitle =>
+      'No transactions yet. New messages will appear here automatically.';
+
+  @override
+  String get allTransactions => 'All Transactions';
+
+  @override
+  String get viewAllTransactions => 'View All Transactions';
+
+  @override
+  String get transactionsHistory => 'Transaction History';
+
+  @override
+  String get transactionDetails => 'Transaction Details';
+
+  @override
+  String transactionMessageReceive(Object amount) {
+    return 'Received $amount EGP';
+  }
+
+  @override
+  String transactionMessageSend(Object amount) {
+    return 'Sent $amount EGP';
+  }
+
+  @override
+  String get transactions_filter_all => 'All';
+
+  @override
+  String get transactions_filter_allWallets => 'All Wallets';
+
+  @override
+  String get transactions_filter_allMembers => 'All Members';
+
+  @override
+  String get transactions_paymentStatusAll => 'All Statuses';
+
+  @override
+  String get transactions_searchHint => 'Search by last 2+ digits';
+
+  @override
+  String get transactions_date_today => 'Today';
+
+  @override
+  String get transactions_date_yesterday => 'Yesterday';
+
+  @override
+  String get transactions_date_week => 'This Week';
+
+  @override
+  String get transactions_date_month => 'This Month';
+
+  @override
+  String get transactions_date_customRange => 'Custom Range';
+
+  @override
+  String get transactions_loadMore => 'Load More';
+
+  @override
+  String transactions_viewingCountOfTotal(int count, int total) {
+    return 'Viewing $count of $total transactions';
+  }
+
+  @override
+  String get transactions_emptyWithFilter =>
+      'No transactions match the selected filter';
+
+  @override
+  String get transactions_emptyWithFilterTitle => 'No matching transactions';
+
+  @override
+  String get transactions_emptyWithFilterDescription =>
+      'Try clearing one or more filters to see more activity.';
+
+  @override
+  String get transactions_clearFilters => 'Clear Filters';
+
+  @override
+  String transactions_title_wallet(String name) {
+    return 'Transactions: $name';
+  }
+
+  @override
+  String get transactions_filterTitle => 'Filters';
+
+  @override
+  String get transactions_filterApply => 'Apply Filters';
+
+  @override
+  String get transactions_filterReset => 'Reset';
+
+  @override
+  String transactions_filterActiveCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'filters',
+      one: 'filter',
+    );
+    return '$count active $_temp0';
+  }
+
+  @override
+  String get transactions_filterType => 'Type';
+
+  @override
+  String get transactions_filterPaidStatus => 'Status';
+
+  @override
+  String get transactions_filterDate => 'Date';
+
+  @override
+  String get transactions_filterMember => 'Member';
+
+  @override
+  String get transactions_filterWallet => 'Wallet';
+
+  @override
+  String get justNow => 'Just Now';
+
+  @override
+  String minutesAgo(Object minutes) {
+    return '$minutes mins ago';
+  }
+
+  @override
+  String get transactions_emptyMultiWalletDescription =>
+      'No transactions are available across these wallets yet.';
 }

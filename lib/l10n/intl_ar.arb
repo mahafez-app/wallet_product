@@ -123,5 +123,175 @@
   "transactionStatusUnpaid": "غير مدفوع",
   "transaction_receivedFrom": "تم الاستلام من",
   "transaction_sentTo": "تم الإرسال إلى",
-  "transactions_emptyWalletDescription": "لا توجد معاملات على هذه المحفظة حتى الآن. أول ما توصلك رسائل جديدة هتظهر هنا تلقائياً."
+  "transactions_emptyWalletDescription": "لا توجد معاملات على هذه المحفظة حتى الآن. أول ما توصلك رسائل جديدة هتظهر هنا تلقائياً.",
+  "errorNetwork": "لا يوجد اتصال بالإنترنت. اتأكد من الشبكة وحاول مرة تانية.",
+  "errorAuthUserNotFound": "الحساب غير موجود. اتأكد من بيانات الدخول.",
+  "errorAuthWrongPassword": "كلمة المرور غير صحيحة. حاول مرة تانية.",
+  "errorAuthEmailInUse": "هذا البريد الإلكتروني مسجل بالفعل.",
+  "errorAuthTooManyRequests": "عدد المحاولات كبير جداً. حاول مرة تانية بعد شوية.",
+  "errorAuthUserDisabled": "تم تعطيل هذا الحساب.",
+  "errorAuthWeakPassword": "كلمة المرور ضعيفة. اختر كلمة مرور أقوى.",
+  "errorAuthInvalidEmail": "البريد الإلكتروني غير صحيح.",
+  "errorUnauthorized": "انتهت الجلسة. سجل دخولك مرة تانية.",
+  "errorAuthGeneric": "تعذر تسجيل الدخول الآن. حاول مرة تانية.",
+  "errorForbidden": "لا يمكنك تنفيذ هذا الإجراء.",
+  "errorNotFound": "المطلوب غير موجود.",
+  "errorConflict": "في تعارض في البيانات. حاول مرة تانية.",
+  "errorUnprocessable": "تعذر تنفيذ طلبك. راجع البيانات وحاول تاني.",
+  "errorServer": "في مشكلة في الخدمة حالياً. حاول بعد شوية.",
+  "errorServerGeneric": "حصلت مشكلة. حاول مرة تانية.",
+  "errorPermissionDenied": "الصلاحية غير متاحة.",
+  "errorCache": "حصلت مشكلة في حفظ البيانات على الجهاز. حاول مرة تانية.",
+  "errorStorage": "حصلت مشكلة في حفظ الملف.",
+  "errorValidation": "راجع البيانات المدخلة.",
+  "errorValidationWithCode": "راجع البيانات المدخلة: {code}",
+  "@errorValidationWithCode": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "errorUnknown": "حصلت مشكلة غير متوقعة.",
+  "errorWalletPhoneNumberRequired": "أدخل رقم الموبايل",
+  "errorWalletPhoneNumberInvalid": "أدخل رقم موبايل مصري صحيح.",
+  "errorWalletProviderRequired": "اختر شركة واحدة على الأقل",
+  "errorWalletProviderMismatch": "رقم الموبايل ده يدعم فقط شركة المحفظة المطابقة له وإنستاباي.",
+  "errorWalletAlreadyExists": "هذه المحفظة مضافة بالفعل.",
+  "errorWalletAllExists": "كل المحافظ المختارة مضافة بالفعل لهذا الرقم.",
+  "errorManualTransactionUnrecognized": "هذا النص لا يطابق صيغة رسائل هذه المحفظة.",
+  "errorManualTransactionWalletMismatch": "الرسالة تشير إلى محفظة مختلفة عن المحفظة المفتوحة حالياً.",
+  "errorWorkspaceNameRequired": "أدخل اسم مساحة العمل",
+  "errorWorkspaceWalletSelectionRequired": "اختر محفظة واحدة على الأقل",
+  "errorWorkspaceOwnerRemovalNotAllowed": "لا يمكن حذف مالك مساحة العمل.",
+  "errorWorkspaceMemberNotFound": "العضو ده مش موجود في مساحة العمل حالياً.",
+  "errorInvitationSelfNotAllowed": "لا يمكنك دعوة نفسك إلى مساحة العمل.",
+  "errorInvitationAlreadyPending": "في دعوة معلقة بالفعل لهذا البريد الإلكتروني.",
+  "errorInvitationUserNotFound": "البريد الإلكتروني ده غير مرتبط بحساب محافظ.",
+  "errorInvitationUserAlreadyMember": "هذا المستخدم عضو بالفعل في مساحة العمل.",
+  "errorInvitationNotPending": "الدعوة دي لم تعد معلقة.",
+  "transaction_shareReceipt": "مشاركة إيصال العملية",
+  "transaction_receiptHeader": "إيصال معاملة — {type}",
+  "@transaction_receiptHeader": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "transaction_amount": "المبلغ",
+  "transaction_wallet": "المحفظة",
+  "transaction_date": "التاريخ",
+  "transaction_dateTime": "التاريخ والوقت",
+  "transaction_referenceNumber": "رقم العملية",
+  "transaction_history": "سجل التعديلات",
+  "transaction_markedAs": "تم التحديد كـ {status}",
+  "@transaction_markedAs": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "transaction_by": "بواسطة {name}",
+  "@transaction_by": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "transaction_notes": "ملاحظات",
+  "transaction_addNote": "إضافة ملاحظة",
+  "transaction_noteHint": "اكتب ملاحظتك هنا",
+  "transaction_deleteAction": "حذف",
+  "transaction_deleteTitle": "حذف المعاملة",
+  "transaction_deleteMessage": "هل أنت متأكد أنك تريد حذف هذه المعاملة؟ لا يمكن التراجع عن هذا الإجراء.",
+  "transaction_deletedSuccess": "تم حذف المعاملة",
+  "transaction_deleteNoteTitle": "حذف الملاحظة",
+  "transaction_deleteNoteMessage": "هل أنت متأكد أنك تريد حذف هذه الملاحظة؟ لا يمكن التراجع عن هذا الإجراء.",
+  "transaction_noteDeleted": "تم حذف الملاحظة",
+  "transaction_undo": "تراجع",
+  "transaction_edited": "تم التعديل",
+  "transaction_cancel": "إلغاء",
+  "transaction_save": "حفظ",
+  "transaction_smsText": "نص الرسالة",
+  "transaction_typeReceiveLabel": "عملية استلام",
+  "transaction_typeSendLabel": "عملية إرسال",
+  "transaction_errorGeneric": "حدث خطأ",
+  "errorTransactionNotFound": "هذه المعاملة لم تعد متاحة.",
+  "errorTransactionAlreadyExists": "هذه المعاملة مسجلة بالفعل.",
+  "transactions_emptyTitle": "لا توجد معاملات بعد",
+  "transactions_emptyHintTitle": "متابعة تلقائية",
+  "transactions_emptyHintDescription": "أول ما نرصد نشاط على محفظة مرتبطة، هنضيفه هنا تلقائياً.",
+  "noTransactionsTitle": "لا توجد معاملات حتى الآن. أول ما توصلك رسائل جديدة هتظهر هنا.",
+  "allTransactions": "جميع المعاملات",
+  "viewAllTransactions": "عرض كل المعاملات",
+  "transactionsHistory": "تاريخ المعاملات",
+  "transactionDetails": "تفاصيل المعاملة",
+  "transactionMessageReceive": "تم استلام {amount} ج.م",
+  "transactionMessageSend": "تم إرسال {amount} ج.م",
+  "@transactionMessageReceive": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@transactionMessageSend": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "transactions_filter_all": "الكل",
+  "transactions_filter_allWallets": "كل المحافظ",
+  "transactions_filter_allMembers": "كل الأعضاء",
+  "transactions_paymentStatusAll": "كل الحالات",
+  "transactions_searchHint": "ابحث بآخر 2 أرقام أو أكثر",
+  "transactions_date_today": "اليوم",
+  "transactions_date_yesterday": "أمس",
+  "transactions_date_week": "الأسبوع",
+  "transactions_date_month": "الشهر",
+  "transactions_date_customRange": "نطاق مخصص",
+  "transactions_loadMore": "عرض المزيد",
+  "transactions_viewingCountOfTotal": "عرض {count} من أصل {total} معاملة",
+  "@transactions_viewingCountOfTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transactions_emptyWithFilter": "لا توجد معاملات مطابقة للفلاتر المحددة",
+  "transactions_emptyWithFilterTitle": "لا توجد معاملات مطابقة",
+  "transactions_emptyWithFilterDescription": "جرّب مسح فلتر أو أكثر لعرض معاملات إضافية.",
+  "transactions_clearFilters": "مسح الفلاتر",
+  "transactions_title_wallet": "معاملات {name}",
+  "@transactions_title_wallet": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "transactions_filterTitle": "الفلاتر",
+  "transactions_filterApply": "تطبيق الفلاتر",
+  "transactions_filterReset": "إعادة ضبط",
+  "transactions_filterActiveCount": "{count} فلتر {count, plural, =1{نشط} other{نشط}}",
+  "@transactions_filterActiveCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "transactions_filterType": "النوع",
+  "transactions_filterPaidStatus": "الحالة",
+  "transactions_filterDate": "التاريخ",
+  "transactions_filterMember": "العضو",
+  "transactions_filterWallet": "المحفظة",
+  "justNow": "الآن",
+  "minutesAgo": "منذ {minutes} دقيقة",
+  "transactions_emptyMultiWalletDescription": "لا توجد معاملات عبر هذه المحافظ حتى الآن."
 }

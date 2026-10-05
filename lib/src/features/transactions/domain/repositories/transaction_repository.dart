@@ -7,8 +7,24 @@ import '../entities/transaction_entity.dart';
 import '../entities/transaction_history_entry_entity.dart';
 import '../entities/transaction_page.dart';
 import '../entities/transaction_paid_status_filter.dart';
+import '../entities/transactions_overview_entity.dart';
 
 abstract interface class TransactionRepository {
+  Future<Result<TransactionPage>> getTransactions({
+    required List<String> walletIds,
+    TransactionType? type,
+    TransactionPaidStatusFilter paidStatusFilter =
+        TransactionPaidStatusFilter.all,
+    String? counterpartySuffixQuery,
+    TransactionDateRange? dateRange,
+    int limit = 20,
+    TransactionsPageCursor? cursor,
+  });
+
+  Future<Result<TransactionsOverviewEntity>> getTransactionsOverview({
+    required List<String> walletIds,
+  });
+
   Future<Result<TransactionPage>> getWalletTransactions({
     required String walletId,
     TransactionType? type,

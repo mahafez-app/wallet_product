@@ -1,6 +1,6 @@
 name: wallet_product
 description: Layer 3 Autonomous Wallet & Transaction Domain Vertical Product Package.
-version: 1.0.0
+version: 1.1.0
 repository: https://github.com/mahafez-app/wallet_product
 publish_to: 'none'
 
@@ -40,6 +40,8 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   uuid: ^4.5.1
+  share_plus: ^12.0.2
+  screenshot: ^3.0.0
 
 dev_dependencies:
   flutter_test:

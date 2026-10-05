@@ -529,6 +529,654 @@ abstract class WalletLocalizations {
   /// In ar, this message translates to:
   /// **'لا توجد معاملات على هذه المحفظة حتى الآن. أول ما توصلك رسائل جديدة هتظهر هنا تلقائياً.'**
   String get transactions_emptyWalletDescription;
+
+  /// No description provided for @errorNetwork.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يوجد اتصال بالإنترنت. اتأكد من الشبكة وحاول مرة تانية.'**
+  String get errorNetwork;
+
+  /// No description provided for @errorAuthUserNotFound.
+  ///
+  /// In ar, this message translates to:
+  /// **'الحساب غير موجود. اتأكد من بيانات الدخول.'**
+  String get errorAuthUserNotFound;
+
+  /// No description provided for @errorAuthWrongPassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمة المرور غير صحيحة. حاول مرة تانية.'**
+  String get errorAuthWrongPassword;
+
+  /// No description provided for @errorAuthEmailInUse.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا البريد الإلكتروني مسجل بالفعل.'**
+  String get errorAuthEmailInUse;
+
+  /// No description provided for @errorAuthTooManyRequests.
+  ///
+  /// In ar, this message translates to:
+  /// **'عدد المحاولات كبير جداً. حاول مرة تانية بعد شوية.'**
+  String get errorAuthTooManyRequests;
+
+  /// No description provided for @errorAuthUserDisabled.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم تعطيل هذا الحساب.'**
+  String get errorAuthUserDisabled;
+
+  /// No description provided for @errorAuthWeakPassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمة المرور ضعيفة. اختر كلمة مرور أقوى.'**
+  String get errorAuthWeakPassword;
+
+  /// No description provided for @errorAuthInvalidEmail.
+  ///
+  /// In ar, this message translates to:
+  /// **'البريد الإلكتروني غير صحيح.'**
+  String get errorAuthInvalidEmail;
+
+  /// No description provided for @errorUnauthorized.
+  ///
+  /// In ar, this message translates to:
+  /// **'انتهت الجلسة. سجل دخولك مرة تانية.'**
+  String get errorUnauthorized;
+
+  /// No description provided for @errorAuthGeneric.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر تسجيل الدخول الآن. حاول مرة تانية.'**
+  String get errorAuthGeneric;
+
+  /// No description provided for @errorForbidden.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يمكنك تنفيذ هذا الإجراء.'**
+  String get errorForbidden;
+
+  /// No description provided for @errorNotFound.
+  ///
+  /// In ar, this message translates to:
+  /// **'المطلوب غير موجود.'**
+  String get errorNotFound;
+
+  /// No description provided for @errorConflict.
+  ///
+  /// In ar, this message translates to:
+  /// **'في تعارض في البيانات. حاول مرة تانية.'**
+  String get errorConflict;
+
+  /// No description provided for @errorUnprocessable.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر تنفيذ طلبك. راجع البيانات وحاول تاني.'**
+  String get errorUnprocessable;
+
+  /// No description provided for @errorServer.
+  ///
+  /// In ar, this message translates to:
+  /// **'في مشكلة في الخدمة حالياً. حاول بعد شوية.'**
+  String get errorServer;
+
+  /// No description provided for @errorServerGeneric.
+  ///
+  /// In ar, this message translates to:
+  /// **'حصلت مشكلة. حاول مرة تانية.'**
+  String get errorServerGeneric;
+
+  /// No description provided for @errorPermissionDenied.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصلاحية غير متاحة.'**
+  String get errorPermissionDenied;
+
+  /// No description provided for @errorCache.
+  ///
+  /// In ar, this message translates to:
+  /// **'حصلت مشكلة في حفظ البيانات على الجهاز. حاول مرة تانية.'**
+  String get errorCache;
+
+  /// No description provided for @errorStorage.
+  ///
+  /// In ar, this message translates to:
+  /// **'حصلت مشكلة في حفظ الملف.'**
+  String get errorStorage;
+
+  /// No description provided for @errorValidation.
+  ///
+  /// In ar, this message translates to:
+  /// **'راجع البيانات المدخلة.'**
+  String get errorValidation;
+
+  /// No description provided for @errorValidationWithCode.
+  ///
+  /// In ar, this message translates to:
+  /// **'راجع البيانات المدخلة: {code}'**
+  String errorValidationWithCode(String code);
+
+  /// No description provided for @errorUnknown.
+  ///
+  /// In ar, this message translates to:
+  /// **'حصلت مشكلة غير متوقعة.'**
+  String get errorUnknown;
+
+  /// No description provided for @errorWalletPhoneNumberRequired.
+  ///
+  /// In ar, this message translates to:
+  /// **'أدخل رقم الموبايل'**
+  String get errorWalletPhoneNumberRequired;
+
+  /// No description provided for @errorWalletPhoneNumberInvalid.
+  ///
+  /// In ar, this message translates to:
+  /// **'أدخل رقم موبايل مصري صحيح.'**
+  String get errorWalletPhoneNumberInvalid;
+
+  /// No description provided for @errorWalletProviderRequired.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر شركة واحدة على الأقل'**
+  String get errorWalletProviderRequired;
+
+  /// No description provided for @errorWalletProviderMismatch.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم الموبايل ده يدعم فقط شركة المحفظة المطابقة له وإنستاباي.'**
+  String get errorWalletProviderMismatch;
+
+  /// No description provided for @errorWalletAlreadyExists.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذه المحفظة مضافة بالفعل.'**
+  String get errorWalletAlreadyExists;
+
+  /// No description provided for @errorWalletAllExists.
+  ///
+  /// In ar, this message translates to:
+  /// **'كل المحافظ المختارة مضافة بالفعل لهذا الرقم.'**
+  String get errorWalletAllExists;
+
+  /// No description provided for @errorManualTransactionUnrecognized.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا النص لا يطابق صيغة رسائل هذه المحفظة.'**
+  String get errorManualTransactionUnrecognized;
+
+  /// No description provided for @errorManualTransactionWalletMismatch.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرسالة تشير إلى محفظة مختلفة عن المحفظة المفتوحة حالياً.'**
+  String get errorManualTransactionWalletMismatch;
+
+  /// No description provided for @errorWorkspaceNameRequired.
+  ///
+  /// In ar, this message translates to:
+  /// **'أدخل اسم مساحة العمل'**
+  String get errorWorkspaceNameRequired;
+
+  /// No description provided for @errorWorkspaceWalletSelectionRequired.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر محفظة واحدة على الأقل'**
+  String get errorWorkspaceWalletSelectionRequired;
+
+  /// No description provided for @errorWorkspaceOwnerRemovalNotAllowed.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يمكن حذف مالك مساحة العمل.'**
+  String get errorWorkspaceOwnerRemovalNotAllowed;
+
+  /// No description provided for @errorWorkspaceMemberNotFound.
+  ///
+  /// In ar, this message translates to:
+  /// **'العضو ده مش موجود في مساحة العمل حالياً.'**
+  String get errorWorkspaceMemberNotFound;
+
+  /// No description provided for @errorInvitationSelfNotAllowed.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يمكنك دعوة نفسك إلى مساحة العمل.'**
+  String get errorInvitationSelfNotAllowed;
+
+  /// No description provided for @errorInvitationAlreadyPending.
+  ///
+  /// In ar, this message translates to:
+  /// **'في دعوة معلقة بالفعل لهذا البريد الإلكتروني.'**
+  String get errorInvitationAlreadyPending;
+
+  /// No description provided for @errorInvitationUserNotFound.
+  ///
+  /// In ar, this message translates to:
+  /// **'البريد الإلكتروني ده غير مرتبط بحساب محافظ.'**
+  String get errorInvitationUserNotFound;
+
+  /// No description provided for @errorInvitationUserAlreadyMember.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا المستخدم عضو بالفعل في مساحة العمل.'**
+  String get errorInvitationUserAlreadyMember;
+
+  /// No description provided for @errorInvitationNotPending.
+  ///
+  /// In ar, this message translates to:
+  /// **'الدعوة دي لم تعد معلقة.'**
+  String get errorInvitationNotPending;
+
+  /// No description provided for @transaction_shareReceipt.
+  ///
+  /// In ar, this message translates to:
+  /// **'مشاركة إيصال العملية'**
+  String get transaction_shareReceipt;
+
+  /// No description provided for @transaction_receiptHeader.
+  ///
+  /// In ar, this message translates to:
+  /// **'إيصال معاملة — {type}'**
+  String transaction_receiptHeader(String type);
+
+  /// No description provided for @transaction_amount.
+  ///
+  /// In ar, this message translates to:
+  /// **'المبلغ'**
+  String get transaction_amount;
+
+  /// No description provided for @transaction_wallet.
+  ///
+  /// In ar, this message translates to:
+  /// **'المحفظة'**
+  String get transaction_wallet;
+
+  /// No description provided for @transaction_date.
+  ///
+  /// In ar, this message translates to:
+  /// **'التاريخ'**
+  String get transaction_date;
+
+  /// No description provided for @transaction_dateTime.
+  ///
+  /// In ar, this message translates to:
+  /// **'التاريخ والوقت'**
+  String get transaction_dateTime;
+
+  /// No description provided for @transaction_referenceNumber.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم العملية'**
+  String get transaction_referenceNumber;
+
+  /// No description provided for @transaction_history.
+  ///
+  /// In ar, this message translates to:
+  /// **'سجل التعديلات'**
+  String get transaction_history;
+
+  /// No description provided for @transaction_markedAs.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم التحديد كـ {status}'**
+  String transaction_markedAs(String status);
+
+  /// No description provided for @transaction_by.
+  ///
+  /// In ar, this message translates to:
+  /// **'بواسطة {name}'**
+  String transaction_by(String name);
+
+  /// No description provided for @transaction_notes.
+  ///
+  /// In ar, this message translates to:
+  /// **'ملاحظات'**
+  String get transaction_notes;
+
+  /// No description provided for @transaction_addNote.
+  ///
+  /// In ar, this message translates to:
+  /// **'إضافة ملاحظة'**
+  String get transaction_addNote;
+
+  /// No description provided for @transaction_noteHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'اكتب ملاحظتك هنا'**
+  String get transaction_noteHint;
+
+  /// No description provided for @transaction_deleteAction.
+  ///
+  /// In ar, this message translates to:
+  /// **'حذف'**
+  String get transaction_deleteAction;
+
+  /// No description provided for @transaction_deleteTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'حذف المعاملة'**
+  String get transaction_deleteTitle;
+
+  /// No description provided for @transaction_deleteMessage.
+  ///
+  /// In ar, this message translates to:
+  /// **'هل أنت متأكد أنك تريد حذف هذه المعاملة؟ لا يمكن التراجع عن هذا الإجراء.'**
+  String get transaction_deleteMessage;
+
+  /// No description provided for @transaction_deletedSuccess.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم حذف المعاملة'**
+  String get transaction_deletedSuccess;
+
+  /// No description provided for @transaction_deleteNoteTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'حذف الملاحظة'**
+  String get transaction_deleteNoteTitle;
+
+  /// No description provided for @transaction_deleteNoteMessage.
+  ///
+  /// In ar, this message translates to:
+  /// **'هل أنت متأكد أنك تريد حذف هذه الملاحظة؟ لا يمكن التراجع عن هذا الإجراء.'**
+  String get transaction_deleteNoteMessage;
+
+  /// No description provided for @transaction_noteDeleted.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم حذف الملاحظة'**
+  String get transaction_noteDeleted;
+
+  /// No description provided for @transaction_undo.
+  ///
+  /// In ar, this message translates to:
+  /// **'تراجع'**
+  String get transaction_undo;
+
+  /// No description provided for @transaction_edited.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم التعديل'**
+  String get transaction_edited;
+
+  /// No description provided for @transaction_cancel.
+  ///
+  /// In ar, this message translates to:
+  /// **'إلغاء'**
+  String get transaction_cancel;
+
+  /// No description provided for @transaction_save.
+  ///
+  /// In ar, this message translates to:
+  /// **'حفظ'**
+  String get transaction_save;
+
+  /// No description provided for @transaction_smsText.
+  ///
+  /// In ar, this message translates to:
+  /// **'نص الرسالة'**
+  String get transaction_smsText;
+
+  /// No description provided for @transaction_typeReceiveLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'عملية استلام'**
+  String get transaction_typeReceiveLabel;
+
+  /// No description provided for @transaction_typeSendLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'عملية إرسال'**
+  String get transaction_typeSendLabel;
+
+  /// No description provided for @transaction_errorGeneric.
+  ///
+  /// In ar, this message translates to:
+  /// **'حدث خطأ'**
+  String get transaction_errorGeneric;
+
+  /// No description provided for @errorTransactionNotFound.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذه المعاملة لم تعد متاحة.'**
+  String get errorTransactionNotFound;
+
+  /// No description provided for @errorTransactionAlreadyExists.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذه المعاملة مسجلة بالفعل.'**
+  String get errorTransactionAlreadyExists;
+
+  /// No description provided for @transactions_emptyTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد معاملات بعد'**
+  String get transactions_emptyTitle;
+
+  /// No description provided for @transactions_emptyHintTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'متابعة تلقائية'**
+  String get transactions_emptyHintTitle;
+
+  /// No description provided for @transactions_emptyHintDescription.
+  ///
+  /// In ar, this message translates to:
+  /// **'أول ما نرصد نشاط على محفظة مرتبطة، هنضيفه هنا تلقائياً.'**
+  String get transactions_emptyHintDescription;
+
+  /// No description provided for @noTransactionsTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد معاملات حتى الآن. أول ما توصلك رسائل جديدة هتظهر هنا.'**
+  String get noTransactionsTitle;
+
+  /// No description provided for @allTransactions.
+  ///
+  /// In ar, this message translates to:
+  /// **'جميع المعاملات'**
+  String get allTransactions;
+
+  /// No description provided for @viewAllTransactions.
+  ///
+  /// In ar, this message translates to:
+  /// **'عرض كل المعاملات'**
+  String get viewAllTransactions;
+
+  /// No description provided for @transactionsHistory.
+  ///
+  /// In ar, this message translates to:
+  /// **'تاريخ المعاملات'**
+  String get transactionsHistory;
+
+  /// No description provided for @transactionDetails.
+  ///
+  /// In ar, this message translates to:
+  /// **'تفاصيل المعاملة'**
+  String get transactionDetails;
+
+  /// No description provided for @transactionMessageReceive.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم استلام {amount} ج.م'**
+  String transactionMessageReceive(Object amount);
+
+  /// No description provided for @transactionMessageSend.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم إرسال {amount} ج.م'**
+  String transactionMessageSend(Object amount);
+
+  /// No description provided for @transactions_filter_all.
+  ///
+  /// In ar, this message translates to:
+  /// **'الكل'**
+  String get transactions_filter_all;
+
+  /// No description provided for @transactions_filter_allWallets.
+  ///
+  /// In ar, this message translates to:
+  /// **'كل المحافظ'**
+  String get transactions_filter_allWallets;
+
+  /// No description provided for @transactions_filter_allMembers.
+  ///
+  /// In ar, this message translates to:
+  /// **'كل الأعضاء'**
+  String get transactions_filter_allMembers;
+
+  /// No description provided for @transactions_paymentStatusAll.
+  ///
+  /// In ar, this message translates to:
+  /// **'كل الحالات'**
+  String get transactions_paymentStatusAll;
+
+  /// No description provided for @transactions_searchHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابحث بآخر 2 أرقام أو أكثر'**
+  String get transactions_searchHint;
+
+  /// No description provided for @transactions_date_today.
+  ///
+  /// In ar, this message translates to:
+  /// **'اليوم'**
+  String get transactions_date_today;
+
+  /// No description provided for @transactions_date_yesterday.
+  ///
+  /// In ar, this message translates to:
+  /// **'أمس'**
+  String get transactions_date_yesterday;
+
+  /// No description provided for @transactions_date_week.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأسبوع'**
+  String get transactions_date_week;
+
+  /// No description provided for @transactions_date_month.
+  ///
+  /// In ar, this message translates to:
+  /// **'الشهر'**
+  String get transactions_date_month;
+
+  /// No description provided for @transactions_date_customRange.
+  ///
+  /// In ar, this message translates to:
+  /// **'نطاق مخصص'**
+  String get transactions_date_customRange;
+
+  /// No description provided for @transactions_loadMore.
+  ///
+  /// In ar, this message translates to:
+  /// **'عرض المزيد'**
+  String get transactions_loadMore;
+
+  /// No description provided for @transactions_viewingCountOfTotal.
+  ///
+  /// In ar, this message translates to:
+  /// **'عرض {count} من أصل {total} معاملة'**
+  String transactions_viewingCountOfTotal(int count, int total);
+
+  /// No description provided for @transactions_emptyWithFilter.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد معاملات مطابقة للفلاتر المحددة'**
+  String get transactions_emptyWithFilter;
+
+  /// No description provided for @transactions_emptyWithFilterTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد معاملات مطابقة'**
+  String get transactions_emptyWithFilterTitle;
+
+  /// No description provided for @transactions_emptyWithFilterDescription.
+  ///
+  /// In ar, this message translates to:
+  /// **'جرّب مسح فلتر أو أكثر لعرض معاملات إضافية.'**
+  String get transactions_emptyWithFilterDescription;
+
+  /// No description provided for @transactions_clearFilters.
+  ///
+  /// In ar, this message translates to:
+  /// **'مسح الفلاتر'**
+  String get transactions_clearFilters;
+
+  /// No description provided for @transactions_title_wallet.
+  ///
+  /// In ar, this message translates to:
+  /// **'معاملات {name}'**
+  String transactions_title_wallet(String name);
+
+  /// No description provided for @transactions_filterTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'الفلاتر'**
+  String get transactions_filterTitle;
+
+  /// No description provided for @transactions_filterApply.
+  ///
+  /// In ar, this message translates to:
+  /// **'تطبيق الفلاتر'**
+  String get transactions_filterApply;
+
+  /// No description provided for @transactions_filterReset.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة ضبط'**
+  String get transactions_filterReset;
+
+  /// No description provided for @transactions_filterActiveCount.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count} فلتر {count, plural, =1{نشط} other{نشط}}'**
+  String transactions_filterActiveCount(int count);
+
+  /// No description provided for @transactions_filterType.
+  ///
+  /// In ar, this message translates to:
+  /// **'النوع'**
+  String get transactions_filterType;
+
+  /// No description provided for @transactions_filterPaidStatus.
+  ///
+  /// In ar, this message translates to:
+  /// **'الحالة'**
+  String get transactions_filterPaidStatus;
+
+  /// No description provided for @transactions_filterDate.
+  ///
+  /// In ar, this message translates to:
+  /// **'التاريخ'**
+  String get transactions_filterDate;
+
+  /// No description provided for @transactions_filterMember.
+  ///
+  /// In ar, this message translates to:
+  /// **'العضو'**
+  String get transactions_filterMember;
+
+  /// No description provided for @transactions_filterWallet.
+  ///
+  /// In ar, this message translates to:
+  /// **'المحفظة'**
+  String get transactions_filterWallet;
+
+  /// No description provided for @justNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'الآن'**
+  String get justNow;
+
+  /// No description provided for @minutesAgo.
+  ///
+  /// In ar, this message translates to:
+  /// **'منذ {minutes} دقيقة'**
+  String minutesAgo(Object minutes);
+
+  /// No description provided for @transactions_emptyMultiWalletDescription.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد معاملات عبر هذه المحافظ حتى الآن.'**
+  String get transactions_emptyMultiWalletDescription;
 }
 
 class _WalletLocalizationsDelegate

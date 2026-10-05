@@ -19,8 +19,8 @@ final class WalletTransactionsPageCursor extends TransactionsPageCursor {
   List<Object?> get props => [createdAt, transactionId];
 }
 
-final class WorkspaceTransactionsPageCursor extends TransactionsPageCursor {
-  const WorkspaceTransactionsPageCursor({required this.walletCursors});
+final class MultiWalletTransactionsPageCursor extends TransactionsPageCursor {
+  const MultiWalletTransactionsPageCursor({required this.walletCursors});
 
   final Map<String, WalletTransactionsPageCursor> walletCursors;
 

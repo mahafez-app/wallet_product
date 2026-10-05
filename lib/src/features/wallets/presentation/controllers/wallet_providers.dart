@@ -26,6 +26,17 @@ final walletAuthProvider = Provider<FirebaseAuth>((ref) {
   return FirebaseAuth.instance;
 });
 
+final walletCurrentUserProvider = Provider<({String uid, String name})?>((ref) {
+  final user = ref.watch(walletAuthProvider).currentUser;
+  if (user == null) return null;
+  return (
+    uid: user.uid,
+    name: user.displayName?.isNotEmpty == true
+        ? user.displayName!
+        : (user.phoneNumber ?? 'User'),
+  );
+});
+
 final walletDeviceIdProvider = Provider<Future<String> Function()>((ref) {
   return () async => 'unknown_device_id';
 });

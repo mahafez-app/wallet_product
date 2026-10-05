@@ -46,10 +46,15 @@ export 'src/features/transactions/domain/entities/transaction_date_range.dart';
 export 'src/features/transactions/domain/entities/transaction_paid_status_filter.dart';
 export 'src/features/transactions/domain/entities/note_entity.dart';
 export 'src/features/transactions/domain/entities/transaction_history_entry_entity.dart';
+export 'src/features/transactions/domain/entities/transactions_overview_entity.dart';
+export 'src/features/transactions/domain/entities/transaction_report_entity.dart';
 export 'src/features/transactions/domain/repositories/transaction_repository.dart';
 export 'src/features/transactions/domain/usecases/preview_missing_transactions_usecase.dart';
 export 'src/features/transactions/domain/usecases/process_manual_transaction_usecase.dart';
 export 'src/features/transactions/domain/usecases/get_wallet_transactions_usecase.dart';
+export 'src/features/transactions/domain/usecases/get_transactions_usecase.dart';
+export 'src/features/transactions/domain/usecases/get_transactions_overview_usecase.dart';
+export 'src/features/transactions/domain/usecases/get_transactions_report_usecase.dart';
 export 'src/features/transactions/domain/usecases/save_transaction_usecase.dart';
 export 'src/features/transactions/domain/usecases/delete_transaction_usecase.dart';
 export 'src/features/transactions/domain/usecases/get_latest_transaction_date_usecase.dart';
@@ -61,7 +66,10 @@ export 'src/features/transactions/domain/usecases/watch_transaction_usecase.dart
 export 'src/features/transactions/data/models/transaction_dto.dart';
 export 'src/features/transactions/data/models/transaction_page_dto.dart';
 export 'src/features/transactions/data/models/transaction_search_terms.dart';
+export 'src/features/transactions/data/models/transactions_overview_dto.dart';
 export 'src/features/transactions/data/datasources/wallet_transaction_remote_data_source.dart';
+export 'src/features/transactions/data/datasources/multi_wallet_transaction_remote_data_source.dart';
+export 'src/features/transactions/data/datasources/multi_wallet_transactions_overview_remote_data_source.dart';
 export 'src/features/transactions/data/datasources/transaction_firestore_support.dart';
 export 'src/features/transactions/data/datasources/transaction_cache_local_data_source.dart';
 export 'src/features/transactions/data/datasources/deleted_transaction_local_data_source.dart';
@@ -74,13 +82,40 @@ export 'src/features/transactions/presentation/controllers/transaction_sync_stat
 export 'src/features/transactions/presentation/controllers/manual_transaction_controller.dart';
 export 'src/features/transactions/presentation/controllers/manual_transaction_state.dart';
 export 'src/features/transactions/presentation/controllers/recent_transactions_provider.dart';
+export 'src/features/transactions/presentation/controllers/transaction_events_provider.dart';
+export 'src/features/transactions/presentation/controllers/transaction_details_controller.dart';
+export 'src/features/transactions/presentation/controllers/transaction_details_state.dart';
+export 'src/features/transactions/presentation/controllers/share_receipt_controller.dart';
+export 'src/features/transactions/presentation/controllers/notes/notes_controller.dart';
+export 'src/features/transactions/presentation/controllers/notes/notes_state.dart';
+export 'src/features/transactions/presentation/ledger/navigation/transactions_route_data.dart';
+export 'src/features/transactions/presentation/ledger/screens/transactions_screen.dart';
+
+// Transactions - Presentation Widgets
 export 'src/features/transactions/presentation/widgets/transaction_card.dart';
 export 'src/features/transactions/presentation/widgets/transaction_sync_section.dart';
 export 'src/features/transactions/presentation/widgets/transaction_sync_bottom_sheet.dart';
 export 'src/features/transactions/presentation/widgets/recent_transactions_section.dart';
 export 'src/features/transactions/presentation/widgets/manual_transaction_bottom_sheet.dart';
+export 'src/features/transactions/presentation/widgets/details/transaction_details_bottom_sheet.dart';
+export 'src/features/transactions/presentation/widgets/details/transaction_header_section.dart';
+export 'src/features/transactions/presentation/widgets/details/details_card_section.dart';
+export 'src/features/transactions/presentation/widgets/details/sms_section.dart';
+export 'src/features/transactions/presentation/widgets/details/notes_section.dart';
+export 'src/features/transactions/presentation/widgets/details/transaction_history_section.dart';
+export 'src/features/transactions/presentation/widgets/details/transaction_wallet_chip.dart';
+export 'src/features/transactions/presentation/widgets/details/transaction_receipt_capture_service.dart';
+export 'src/features/transactions/presentation/widgets/details/transaction_receipt_image.dart';
+export 'src/features/transactions/presentation/widgets/notes/note_card.dart';
+export 'src/features/transactions/presentation/widgets/notes/note_input_field.dart';
+export 'src/features/transactions/presentation/widgets/notes/note_read_view.dart';
+export 'src/features/transactions/presentation/widgets/notes/notes_section_header.dart';
+export 'src/features/transactions/presentation/widgets/no_transactions_card.dart';
 
 // Shared
 export 'src/shared/constants/wallet_assets.dart';
+export 'src/shared/utils/date_extensions.dart';
+export 'src/shared/utils/failure_extension.dart' hide FailureDisplay;
+export 'src/shared/utils/transaction_share_extension.dart';
 export 'src/shared/widgets/provider_icon.dart';
 export 'src/shared/widgets/provider_info.dart';

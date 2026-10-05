@@ -123,5 +123,175 @@
   "transactionStatusUnpaid": "Unpaid",
   "transaction_receivedFrom": "Received From",
   "transaction_sentTo": "Sent To",
-  "transactions_emptyWalletDescription": "This wallet has no transactions yet. New messages will appear here automatically."
+  "transactions_emptyWalletDescription": "This wallet has no transactions yet. New messages will appear here automatically.",
+  "errorNetwork": "No internet connection. Please check your network.",
+  "errorAuthUserNotFound": "User not found. Please check your credentials.",
+  "errorAuthWrongPassword": "Incorrect password. Please try again.",
+  "errorAuthEmailInUse": "This email is already registered.",
+  "errorAuthTooManyRequests": "Too many attempts. Please try again later.",
+  "errorAuthUserDisabled": "This account has been disabled.",
+  "errorAuthWeakPassword": "Password is too weak. Please choose a stronger password.",
+  "errorAuthInvalidEmail": "Invalid email address.",
+  "errorUnauthorized": "Unauthorized access. Please log in again.",
+  "errorAuthGeneric": "Authentication failed. Please try again.",
+  "errorForbidden": "Access forbidden.",
+  "errorNotFound": "Resource not found.",
+  "errorConflict": "Resource conflict. Please try again.",
+  "errorUnprocessable": "Unable to process your request.",
+  "errorServer": "Server error. Please try again later.",
+  "errorServerGeneric": "Something went wrong. Please try again.",
+  "errorPermissionDenied": "Permission denied.",
+  "errorCache": "Local storage error. Please try again.",
+  "errorStorage": "File storage error.",
+  "errorValidation": "Validation failed.",
+  "errorValidationWithCode": "Validation failed: {code}",
+  "@errorValidationWithCode": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "errorUnknown": "An unexpected error occurred.",
+  "errorWalletPhoneNumberRequired": "Please enter a phone number",
+  "errorWalletPhoneNumberInvalid": "Please enter a valid Egyptian mobile number.",
+  "errorWalletProviderRequired": "Please select at least one provider",
+  "errorWalletProviderMismatch": "This phone number only supports its matching mobile wallet provider and InstaPay.",
+  "errorWalletAlreadyExists": "This wallet is already added.",
+  "errorWalletAllExists": "All selected wallets are already added for this phone number.",
+  "errorManualTransactionUnrecognized": "This text does not match the selected wallet's SMS format.",
+  "errorManualTransactionWalletMismatch": "This SMS points to a different wallet than the one currently open.",
+  "errorWorkspaceNameRequired": "Please enter a workspace name",
+  "errorWorkspaceWalletSelectionRequired": "Please select at least one wallet",
+  "errorWorkspaceOwnerRemovalNotAllowed": "The workspace owner cannot be removed.",
+  "errorWorkspaceMemberNotFound": "This member is no longer available in the workspace.",
+  "errorInvitationSelfNotAllowed": "You cannot invite yourself to this workspace.",
+  "errorInvitationAlreadyPending": "A pending invitation already exists for this email.",
+  "errorInvitationUserNotFound": "This email is not linked to any Mahafez account.",
+  "errorInvitationUserAlreadyMember": "This user is already a member of the workspace.",
+  "errorInvitationNotPending": "This invitation is no longer pending.",
+  "transaction_shareReceipt": "Share Receipt",
+  "transaction_receiptHeader": "Transaction Receipt — {type}",
+  "@transaction_receiptHeader": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "transaction_amount": "Amount",
+  "transaction_wallet": "Wallet",
+  "transaction_date": "Date",
+  "transaction_dateTime": "Date & Time",
+  "transaction_referenceNumber": "Reference Number",
+  "transaction_history": "Change History",
+  "transaction_markedAs": "Marked as {status}",
+  "@transaction_markedAs": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "transaction_by": "By {name}",
+  "@transaction_by": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "transaction_notes": "Notes",
+  "transaction_addNote": "Add Note",
+  "transaction_noteHint": "Write your note here…",
+  "transaction_deleteAction": "Delete",
+  "transaction_deleteTitle": "Delete Transaction",
+  "transaction_deleteMessage": "Are you sure you want to delete this transaction? This action cannot be undone.",
+  "transaction_deletedSuccess": "Transaction deleted",
+  "transaction_deleteNoteTitle": "Delete Note",
+  "transaction_deleteNoteMessage": "Are you sure you want to delete this note? This action cannot be undone.",
+  "transaction_noteDeleted": "Note deleted",
+  "transaction_undo": "Undo",
+  "transaction_edited": "Edited",
+  "transaction_cancel": "Cancel",
+  "transaction_save": "Save",
+  "transaction_smsText": "SMS Text",
+  "transaction_typeReceiveLabel": "Receive Transaction",
+  "transaction_typeSendLabel": "Send Transaction",
+  "transaction_errorGeneric": "An error occurred",
+  "errorTransactionNotFound": "This transaction is no longer available.",
+  "errorTransactionAlreadyExists": "This transaction has already been tracked.",
+  "transactions_emptyTitle": "No transactions yet",
+  "transactions_emptyHintTitle": "Automatic tracking",
+  "transactions_emptyHintDescription": "When activity is detected on a connected wallet, we sync it here for you automatically.",
+  "noTransactionsTitle": "No transactions yet. New messages will appear here automatically.",
+  "allTransactions": "All Transactions",
+  "viewAllTransactions": "View All Transactions",
+  "transactionsHistory": "Transaction History",
+  "transactionDetails": "Transaction Details",
+  "transactionMessageReceive": "Received {amount} EGP",
+  "transactionMessageSend": "Sent {amount} EGP",
+  "@transactionMessageReceive": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@transactionMessageSend": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "transactions_filter_all": "All",
+  "transactions_filter_allWallets": "All Wallets",
+  "transactions_filter_allMembers": "All Members",
+  "transactions_paymentStatusAll": "All Statuses",
+  "transactions_searchHint": "Search by last 2+ digits",
+  "transactions_date_today": "Today",
+  "transactions_date_yesterday": "Yesterday",
+  "transactions_date_week": "This Week",
+  "transactions_date_month": "This Month",
+  "transactions_date_customRange": "Custom Range",
+  "transactions_loadMore": "Load More",
+  "transactions_viewingCountOfTotal": "Viewing {count} of {total} transactions",
+  "@transactions_viewingCountOfTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transactions_emptyWithFilter": "No transactions match the selected filter",
+  "transactions_emptyWithFilterTitle": "No matching transactions",
+  "transactions_emptyWithFilterDescription": "Try clearing one or more filters to see more activity.",
+  "transactions_clearFilters": "Clear Filters",
+  "transactions_title_wallet": "Transactions: {name}",
+  "@transactions_title_wallet": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "transactions_filterTitle": "Filters",
+  "transactions_filterApply": "Apply Filters",
+  "transactions_filterReset": "Reset",
+  "transactions_filterActiveCount": "{count} active {count, plural, =1{filter} other{filters}}",
+  "@transactions_filterActiveCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "transactions_filterType": "Type",
+  "transactions_filterPaidStatus": "Status",
+  "transactions_filterDate": "Date",
+  "transactions_filterMember": "Member",
+  "transactions_filterWallet": "Wallet",
+  "justNow": "Just Now",
+  "minutesAgo": "{minutes} mins ago",
+  "transactions_emptyMultiWalletDescription": "No transactions are available across these wallets yet."
 }
