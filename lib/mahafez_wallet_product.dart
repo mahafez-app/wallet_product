@@ -1,9 +1,7 @@
-// Generated Localizations
-export 'src/generated/wallet_localizations.dart';
+export 'generated/wallet_localizations.dart';
 
 // Domain Entities
 export 'src/domain/entities/wallet_entity.dart';
-export 'src/domain/entities/wallet_details_entity.dart';
 
 // Domain Repository
 export 'src/domain/repositories/wallet_repository.dart';

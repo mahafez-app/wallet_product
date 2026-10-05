@@ -1,5 +1,4 @@
 import 'package:mahafez_core/mahafez_core.dart';
-import '../../domain/entities/wallet_details_entity.dart';
 import '../../domain/entities/wallet_entity.dart';
 import '../../domain/repositories/wallet_repository.dart';
 import '../cache/wallet_meta_cache.dart';
@@ -48,12 +47,11 @@ final class WalletRepositoryImpl implements WalletRepository {
   }
 
   @override
-  Future<Result<WalletDetailsEntity>> getWalletDetails(String walletId) {
+  Future<Result<WalletEntity>> getWalletDetails(String walletId) {
     return _execute(() async {
       final walletDto = await _detailsDataSource.getWallet(walletId);
       final latestBalance = await _detailsDataSource.getLatestActivityBalance(walletId);
-      return WalletDetailsEntity(
-        wallet: walletDto.toEntity(),
+      return walletDto.toEntity().copyWith(
         latestActivityBalance: latestBalance,
       );
     });

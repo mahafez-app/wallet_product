@@ -15,6 +15,7 @@ class WalletEntity extends Equatable implements SmsWalletCandidate {
     required this.lastBalanceAt,
     required this.createdAt,
     this.statsResetAt,
+    this.latestActivityBalance,
   });
 
   @override
@@ -31,6 +32,45 @@ class WalletEntity extends Equatable implements SmsWalletCandidate {
   final DateTime lastBalanceAt;
   final DateTime createdAt;
   final DateTime? statsResetAt;
+  final double? latestActivityBalance;
+
+  double get suggestedBalance => latestActivityBalance ?? currentBalance;
+
+  static const _unset = Object();
+
+  WalletEntity copyWith({
+    String? id,
+    String? phoneNumber,
+    WalletProvider? provider,
+    String? deviceId,
+    String? ownerUid,
+    double? currentBalance,
+    double? totalReceived,
+    double? totalSent,
+    DateTime? lastBalanceAt,
+    DateTime? createdAt,
+    Object? statsResetAt = _unset,
+    Object? latestActivityBalance = _unset,
+  }) {
+    return WalletEntity(
+      id: id ?? this.id,
+      phoneNumber: phoneNumber ?? this.phoneNumber,
+      provider: provider ?? this.provider,
+      deviceId: deviceId ?? this.deviceId,
+      ownerUid: ownerUid ?? this.ownerUid,
+      currentBalance: currentBalance ?? this.currentBalance,
+      totalReceived: totalReceived ?? this.totalReceived,
+      totalSent: totalSent ?? this.totalSent,
+      lastBalanceAt: lastBalanceAt ?? this.lastBalanceAt,
+      createdAt: createdAt ?? this.createdAt,
+      statsResetAt: identical(statsResetAt, _unset)
+          ? this.statsResetAt
+          : statsResetAt as DateTime?,
+      latestActivityBalance: identical(latestActivityBalance, _unset)
+          ? this.latestActivityBalance
+          : latestActivityBalance as double?,
+    );
+  }
 
   @override
   List<Object?> get props => [
@@ -45,5 +85,6 @@ class WalletEntity extends Equatable implements SmsWalletCandidate {
     lastBalanceAt,
     createdAt,
     statsResetAt,
+    latestActivityBalance,
   ];
 }

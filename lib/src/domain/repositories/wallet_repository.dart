@@ -1,5 +1,4 @@
 import 'package:mahafez_core/mahafez_core.dart';
-import '../entities/wallet_details_entity.dart';
 import '../entities/wallet_entity.dart';
 
 abstract interface class WalletRepository {
@@ -11,7 +10,7 @@ abstract interface class WalletRepository {
     Map<String, double> initialBalances,
   });
 
-  Future<Result<WalletDetailsEntity>> getWalletDetails(String walletId);
+  Future<Result<WalletEntity>> getWalletDetails(String walletId);
 
   Future<Result<void>> deleteWallet(String walletId);
 

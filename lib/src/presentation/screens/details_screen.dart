@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
-import '../../domain/entities/wallet_details_entity.dart';
+import '../../domain/entities/wallet_entity.dart';
 import '../providers/wallet_details_controller.dart';
 import '../utils/localization_extension.dart';
 import '../widgets/details/balance_section.dart';
@@ -22,9 +22,9 @@ class DetailsScreen extends StatelessWidget {
   final VoidCallback? onReportsPressed;
   final Widget Function(BuildContext context, String walletId)?
       manualTransactionActionBuilder;
-  final Widget Function(BuildContext context, WalletDetailsEntity details)?
+  final Widget Function(BuildContext context, WalletEntity wallet)?
       syncSectionBuilder;
-  final Widget Function(BuildContext context, WalletDetailsEntity details)?
+  final Widget Function(BuildContext context, WalletEntity wallet)?
       recentTransactionsSectionBuilder;
 
   @override
@@ -65,9 +65,9 @@ class _DetailsBody extends ConsumerWidget {
   final String walletId;
   final Widget Function(BuildContext context, String walletId)?
       manualTransactionActionBuilder;
-  final Widget Function(BuildContext context, WalletDetailsEntity details)?
+  final Widget Function(BuildContext context, WalletEntity wallet)?
       syncSectionBuilder;
-  final Widget Function(BuildContext context, WalletDetailsEntity details)?
+  final Widget Function(BuildContext context, WalletEntity wallet)?
       recentTransactionsSectionBuilder;
 
   @override
@@ -77,23 +77,23 @@ class _DetailsBody extends ConsumerWidget {
     return state.when(
       loading: () => const MahafezLoader(),
       error: (error, _) => MahafezErrorView(error: error),
-      data: (details) => SingleChildScrollView(
+      data: (wallet) => SingleChildScrollView(
         padding: MahafezSpacing.pagePadding,
         child: Column(
           children: [
             BalanceSection(
-              details: details,
+              wallet: wallet,
               manualTransactionActionBuilder: manualTransactionActionBuilder,
             ),
             MahafezSpacing.md.verticalSpace,
-            _InfoSection(details: details),
+            _InfoSection(wallet: wallet),
             if (syncSectionBuilder != null) ...[
               MahafezSpacing.md.verticalSpace,
-              syncSectionBuilder!(context, details),
+              syncSectionBuilder!(context, wallet),
             ],
             if (recentTransactionsSectionBuilder != null) ...[
               MahafezSpacing.md.verticalSpace,
-              recentTransactionsSectionBuilder!(context, details),
+              recentTransactionsSectionBuilder!(context, wallet),
             ],
           ],
         ),
@@ -103,13 +103,12 @@ class _DetailsBody extends ConsumerWidget {
 }
 
 class _InfoSection extends StatelessWidget {
-  const _InfoSection({required this.details});
+  const _InfoSection({required this.wallet});
 
-  final WalletDetailsEntity details;
+  final WalletEntity wallet;
 
   @override
   Widget build(BuildContext context) {
-    final wallet = details.wallet;
     final colors = context.mahafezColors;
 
     return Container(

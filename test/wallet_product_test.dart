@@ -25,9 +25,9 @@ void main() {
       expect(entity.currentBalance, 1500.0);
     });
 
-    test('WalletDetailsEntity calculates suggestedBalance correctly', () {
+    test('WalletEntity calculates suggestedBalance correctly', () {
       final testDate = DateTime.fromMillisecondsSinceEpoch(1000000);
-      final entity = WalletEntity(
+      final entityWithLatest = WalletEntity(
         id: 'wallet-1',
         phoneNumber: '01012345678',
         provider: WalletProvider.vodafoneCash,
@@ -38,19 +38,14 @@ void main() {
         totalSent: 0.0,
         lastBalanceAt: testDate,
         createdAt: testDate,
-      );
-
-      final detailsWithLatest = WalletDetailsEntity(
-        wallet: entity,
         latestActivityBalance: 1200.0,
       );
-      expect(detailsWithLatest.suggestedBalance, 1200.0);
+      expect(entityWithLatest.suggestedBalance, 1200.0);
 
-      final detailsWithoutLatest = WalletDetailsEntity(
-        wallet: entity,
+      final entityWithoutLatest = entityWithLatest.copyWith(
         latestActivityBalance: null,
       );
-      expect(detailsWithoutLatest.suggestedBalance, 1000.0);
+      expect(entityWithoutLatest.suggestedBalance, 1000.0);
     });
   });
 

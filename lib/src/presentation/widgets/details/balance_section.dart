@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mahafez_design_system/mahafez_design_system.dart';
 
-import '../../../domain/entities/wallet_details_entity.dart';
+import '../../../domain/entities/wallet_entity.dart';
 import '../../providers/wallet_details_controller.dart';
 import '../../providers/wallet_providers.dart';
 import '../../utils/date_extensions.dart';
@@ -13,18 +13,17 @@ import 'edit_balance_bottom_sheet.dart';
 class BalanceSection extends ConsumerWidget {
   const BalanceSection({
     super.key,
-    required this.details,
+    required this.wallet,
     this.manualTransactionActionBuilder,
   });
 
-  final WalletDetailsEntity details;
+  final WalletEntity wallet;
   final Widget Function(BuildContext context, String walletId)?
       manualTransactionActionBuilder;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
-    final wallet = details.wallet;
     final localizedLastUpdate = wallet.lastBalanceAt.toFormattedDate(context);
 
     final currentUser = ref.watch(walletAuthProvider).currentUser;
@@ -55,7 +54,7 @@ class BalanceSection extends ConsumerWidget {
               context,
               walletId: wallet.id,
               currentBalance: wallet.currentBalance,
-              suggestedBalance: details.suggestedBalance,
+              suggestedBalance: wallet.suggestedBalance,
             ),
           ),
         ],
@@ -77,7 +76,7 @@ class BalanceSection extends ConsumerWidget {
 
     if (confirmed == true) {
       await ref
-          .read(walletDetailsControllerProvider(details.wallet.id).notifier)
+          .read(walletDetailsControllerProvider(wallet.id).notifier)
           .resetStats();
     }
   }

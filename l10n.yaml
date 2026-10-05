@@ -2,4 +2,4 @@ arb-dir: lib/l10n
 template-arb-file: intl_ar.arb
 output-localization-file: wallet_localizations.dart
 output-class: WalletLocalizations
-output-dir: lib/src/generated
+output-dir: lib/generated
